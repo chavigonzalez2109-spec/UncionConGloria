@@ -1,0 +1,3545 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unción con Gloria | Iglesia</title>
+  <meta name="description" content="Iglesia Unción con Gloria - Una iglesia operando bajo la unción y el poder del Espíritu Santo para llevar su gloria a las naciones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* ============================================
+       CSS VARIABLES — Paleta Unción con Gloria
+    ============================================ */
+    :root {
+      --color-dark-brown: #5C2D0A;
+      --color-mid-brown: #8B5728;
+      --color-copper: #C08040;
+      --color-light-brown: #D4956A;
+      --color-cream: #F9F5F0;
+      --color-white: #FFFFFF;
+      --color-overlay: rgba(92, 45, 10, 0.52);
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --font-sans: 'Open Sans', Calibri, Arial, sans-serif;
+      --transition: 0.25s ease;
+      --shadow-sm: 0 2px 8px rgba(92,45,10,0.10);
+      --shadow-md: 0 4px 24px rgba(92,45,10,0.14);
+      --radius: 6px;
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-dark-brown);
+      background: var(--color-white);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      line-height: 1.25;
+      color: var(--color-dark-brown);
+    }
+
+    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+    h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: 0.05em; }
+    h3 { font-size: clamp(18px, 2.5vw, 24px); font-weight: 400; }
+    h4 { font-size: 18px; font-weight: 700; }
+
+    p { font-family: var(--font-sans); font-size: 15px; line-height: 1.7; color: var(--color-dark-brown); }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--color-cream); }
+
+    /* ============================================
+       BUTTONS
+    ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: var(--radius);
+      padding: 12px 28px;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--color-copper);
+      color: var(--color-white);
+    }
+    .btn-primary:hover {
+      background: var(--color-mid-brown);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-dark-brown);
+      border: 2px solid var(--color-dark-brown);
+    }
+    .btn-secondary:hover {
+      background: var(--color-cream);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.7);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ============================================
+       SECTION HEADER
+    ============================================ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--color-mid-brown);
+    }
+    .divider {
+      display: block;
+      width: 64px;
+      height: 3px;
+      background: var(--color-copper);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--color-white);
+      box-shadow: 0 2px 16px rgba(92,45,10,0.09);
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo-text {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-dark-brown);
+      line-height: 1.2;
+    }
+    .nav-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--color-copper);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-dark-brown);
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-copper);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a:hover { color: var(--color-copper); }
+
+    .nav-lang {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-copper);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1.5px solid var(--color-copper);
+      transition: var(--transition);
+    }
+    .nav-lang:hover {
+      background: var(--color-copper);
+      color: white;
+    }
+    .nav-lang span { font-weight: 700; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-dark-brown);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* Mobile nav */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--color-white);
+        padding: 20px 24px;
+        gap: 16px;
+        box-shadow: 0 8px 24px rgba(92,45,10,0.12);
+        border-top: 2px solid var(--color-cream);
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom right, #3a1b05, #7a3c12, #5C2D0A);
+      z-index: 0;
+    }
+
+    /* Decorative pattern overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C08040' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 100px;
+      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-inner { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-verse { margin: 40px auto 0; }
+      .hero-logo-display { order: -1; }
+    }
+
+    .hero-inner {
+      max-width: 100%;
+    }
+
+    /* ---- Logo Display en Hero ---- */
+    .hero-logo-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .hero-logo-glow {
+      position: relative;
+      filter: drop-shadow(0 0 48px rgba(192, 128, 64, 0.55))
+              drop-shadow(0 0 24px rgba(192, 128, 64, 0.30));
+      animation: logoFloat 5s ease-in-out infinite;
+    }
+    .hero-logo-glow::before {
+      content: '';
+      position: absolute;
+      inset: -24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,128,64,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      30%       { transform: translateY(-10px) rotate(0.5deg); }
+      60%       { transform: translateY(-6px) rotate(-0.5deg); }
+    }
+
+    .hero-logo-name {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      color: var(--color-white);
+      text-align: center;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+    .hero-logo-name span {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      color: var(--color-light-brown);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,128,64,0.22);
+      border: 1px solid rgba(192,128,64,0.4);
+      color: var(--color-light-brown);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero-title .highlight {
+      color: var(--color-light-brown);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 40px;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-verse {
+      margin-top: 60px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--color-copper);
+      background: rgba(192,128,64,0.10);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      max-width: 520px;
+    }
+    .hero-verse p {
+      color: rgba(255,255,255,0.92);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .hero-verse cite {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-copper);
+      font-style: normal;
+      letter-spacing: 0.06em;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ============================================
+       ANNOUNCEMENT BAR
+    ============================================ */
+    .announcement-bar {
+      background: var(--color-copper);
+      color: white;
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .announcement-bar a {
+      color: white;
+      text-decoration: underline;
+      margin-left: 8px;
+    }
+
+    /* ============================================
+       MISSION / VISION
+    ============================================ */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 700px) { .mv-grid { grid-template-columns: 1fr; } }
+
+    .mv-card {
+      padding: 40px;
+      border-radius: var(--radius);
+      border-top: 4px solid var(--color-copper);
+    }
+    .mv-card.bg-cream { background: var(--color-cream); }
+    .mv-card.bg-dark {
+      background: var(--color-dark-brown);
+      color: white;
+    }
+    .mv-card.bg-dark h3,
+    .mv-card.bg-dark p { color: white; }
+    .mv-card.bg-dark p { color: rgba(255,255,255,0.88); }
+
+    .mv-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--color-copper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .mv-icon i { font-size: 24px; color: white; }
+    .mv-card h3 { margin-bottom: 12px; }
+    .mv-card p { font-size: 15px; line-height: 1.7; }
+    .mv-card .lang-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 8px;
+    }
+    .mv-card.bg-dark .lang-tag { color: var(--color-light-brown); }
+    .mv-card p + p { margin-top: 12px; }
+
+    /* ============================================
+       VALUES
+    ============================================ */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .value-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border-bottom: 3px solid var(--color-copper);
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .value-card .value-icon {
+      width: 52px; height: 52px;
+      background: var(--color-cream);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .value-card .value-icon i { font-size: 26px; color: var(--color-copper); }
+    .value-card h4 { margin-bottom: 10px; font-size: 17px; }
+    .value-card p { font-size: 14px; color: var(--color-mid-brown); }
+
+    /* ============================================
+       OUR STORY
+    ============================================ */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .story-image {
+      position: relative;
+    }
+    .story-image-main {
+      width: 100%;
+      height: 420px;
+      background: linear-gradient(135deg, var(--color-mid-brown), var(--color-dark-brown));
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .story-image-main .placeholder-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+    }
+    .story-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--color-copper);
+      color: white;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .story-badge .year { font-size: 32px; font-weight: 700; font-family: var(--font-serif); line-height: 1; }
+    .story-badge .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    .story-content .section-label { display: block; margin-bottom: 8px; }
+    .story-content h2 { margin-bottom: 20px; }
+    .story-content p { margin-bottom: 16px; color: var(--color-mid-brown); font-size: 15px; }
+    .story-content p:last-of-type { margin-bottom: 28px; }
+
+    .story-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .stat {
+      text-align: left;
+    }
+    .stat .num {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-copper);
+      line-height: 1;
+    }
+    .stat .lbl {
+      font-size: 13px;
+      color: var(--color-mid-brown);
+      margin-top: 4px;
+    }
+
+    /* ============================================
+       EVENTS
+    ============================================ */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .event-card {
+      background: var(--color-cream);
+      border-radius: var(--radius);
+      border-top: 4px solid var(--color-copper);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .event-img {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--color-mid-brown) 0%, var(--color-dark-brown) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.9);
+      font-size: 40px;
+    }
+    .event-img--sunday  { background: linear-gradient(135deg, #7A3B12 0%, #5C2D0A 100%); }
+    .event-img--prayer  { background: linear-gradient(135deg, #5C2D0A 0%, #3B1A06 100%); }
+    .event-img--worship { background: linear-gradient(135deg, #C08040 0%, #8B5728 100%); }
+
+    /* Card icon block — large icon + label inside event/devo image area */
+    .card-icon-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-icon-block i {
+      font-size: 56px;
+      color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+    }
+    .card-icon-block span {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.80);
+    }
+
+    .event-body { padding: 24px; }
+    .event-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .event-date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-dark-brown);
+      letter-spacing: 0.04em;
+    }
+    .event-date i { color: var(--color-copper); }
+    .event-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-white);
+      background: var(--color-copper);
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+    .event-body h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-dark-brown);
+    }
+    .event-body p {
+      font-size: 14px;
+      color: var(--color-mid-brown);
+      margin-bottom: 20px;
+    }
+    .event-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(92,45,10,0.12);
+    }
+    .event-location {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--color-mid-brown);
+    }
+    .event-location i { color: var(--color-copper); }
+    .event-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-copper);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .event-link:hover { color: var(--color-dark-brown); }
+
+    /* ============================================
+       FEATURED VERSE
+    ============================================ */
+    .verse-section {
+      background: var(--color-cream);
+      padding: 80px 0;
+    }
+    .verse-block {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .verse-decoration {
+      font-size: 64px;
+      color: var(--color-copper);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: var(--font-serif);
+    }
+    .verse-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--color-mid-brown);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .verse-ref {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--color-copper);
+      text-transform: uppercase;
+    }
+    .verse-divider {
+      width: 64px;
+      height: 2px;
+      background: var(--color-copper);
+      margin: 24px auto;
+      border-radius: 2px;
+    }
+    .verse-text-en {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--color-light-brown);
+      line-height: 1.55;
+    }
+
+    /* ============================================
+       DEVOTIONALS
+    ============================================ */
+    .devos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .devo-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .devo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .devo-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(to bottom right, var(--color-light-brown), var(--color-mid-brown));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.92);
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .devo-img i {
+      font-size: 56px;
+      color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.20));
+    }
+    .devo-category {
+      position: absolute;
+      bottom: 12px; left: 12px;
+      background: var(--color-copper);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .devo-body { padding: 24px; }
+    .devo-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .devo-date {
+      font-size: 12px;
+      color: var(--color-mid-brown);
+      font-weight: 600;
+    }
+    .devo-body h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-dark-brown);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .devo-body p {
+      font-size: 14px;
+      color: var(--color-mid-brown);
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .devo-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-copper);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .devo-link:hover { color: var(--color-dark-brown); }
+
+    /* ============================================
+       CONTACT
+    ============================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .contact-info h2 { margin-bottom: 20px; }
+    .contact-info p { color: var(--color-mid-brown); margin-bottom: 32px; }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      background: var(--color-cream);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-item-icon i { font-size: 22px; color: var(--color-copper); }
+    .contact-item-text h5 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-copper);
+      margin-bottom: 2px;
+    }
+    .contact-item-text p { color: var(--color-mid-brown); font-size: 14px; }
+
+    /* Map card */
+    .map-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(139,87,40,0.15);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+    .map-iframe-wrap {
+      width: 100%;
+      height: 210px;
+      position: relative;
+    }
+    .map-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .map-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
+      background: var(--color-cream);
+      border-top: 1px solid rgba(139,87,40,0.12);
+    }
+    .map-place-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+    }
+    .map-place-info > i {
+      color: var(--color-copper);
+      font-size: 15px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .map-place-name {
+      display: block;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--color-dark-brown);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .map-place-addr {
+      display: block;
+      font-size: 11px;
+      color: var(--color-mid-brown);
+    }
+    .map-dir-btn {
+      white-space: nowrap;
+      font-size: 12px;
+      padding: 8px 14px;
+      flex-shrink: 0;
+      gap: 6px;
+    }
+
+    /* Navigation options sheet */
+    .map-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 2200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .map-nav-overlay.open { display: flex; }
+    .map-nav-sheet {
+      background: var(--color-white);
+      border-radius: 14px;
+      padding: 30px 26px 22px;
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      animation: modalSlideIn 0.22s ease;
+    }
+    .map-nav-sheet h4 {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--color-dark-brown);
+      margin-bottom: 4px;
+    }
+    .map-nav-sheet .map-nav-subtext {
+      font-size: 12px;
+      color: var(--color-mid-brown);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+    .map-nav-options {
+      display: flex;
+      gap: 12px;
+    }
+    .map-nav-opt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .map-nav-opt:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .map-nav-opt i { font-size: 30px; }
+    .map-nav-gmaps {
+      background: #FEF2F2;
+      color: #C62828;
+      border-color: #FFCDD2;
+    }
+    .map-nav-gmaps:hover { background: #FFCDD2; }
+    .map-nav-waze {
+      background: #EFF8FF;
+      color: #1565C0;
+      border-color: #BBDEFB;
+    }
+    .map-nav-waze:hover { background: #BBDEFB; }
+    .map-nav-cancel {
+      display: block;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--color-mid-brown);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      width: 100%;
+      text-align: center;
+      padding: 4px;
+    }
+    .map-nav-cancel:hover { color: var(--color-dark-brown); }
+
+    .contact-form {
+      background: var(--color-cream);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .form-row { margin-bottom: 20px; }
+    .form-row label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-dark-brown);
+      margin-bottom: 6px;
+    }
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid rgba(92,45,10,0.2);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--color-dark-brown);
+      background: white;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus {
+      border-color: var(--color-copper);
+      box-shadow: 0 0 0 3px rgba(192,128,64,0.12);
+    }
+    .form-row textarea { min-height: 120px; resize: vertical; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: var(--color-dark-brown);
+      color: rgba(255,255,255,0.88);
+    }
+    .footer-main {
+      padding: 64px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-brand .logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 18px;
+      transition: var(--transition);
+    }
+    .footer-social a:hover {
+      background: var(--color-copper);
+      color: white;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: var(--color-copper);
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover { color: white; }
+    .footer-col p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 20px 0;
+    }
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom a { color: var(--color-copper); }
+
+    /* ============================================
+       LOGO SVG
+    ============================================ */
+    .logo-svg {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+    .logo-svg-sm { width: 36px; height: 36px; }
+    .logo-svg-lg { width: 80px; height: 80px; }
+    .logo-svg-hero { width: 100px; height: 100px; }
+
+    /* ============================================
+       LANGUAGE TOGGLE
+    ============================================ */
+    [data-lang="en"] .es-only { display: none; }
+    [data-lang="es"] .en-only { display: none; }
+
+    /* ============================================
+       SCROLL TO TOP
+    ============================================ */
+    #scrollTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-copper);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    #scrollTop:hover { background: var(--color-dark-brown); }
+    #scrollTop.visible { display: flex; }
+
+    /* ============================================
+       GALLERY
+    ============================================ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 12px;
+    }
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+      }
+      .gallery-featured { grid-column: span 1; grid-row: span 1; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+    }
+
+    .gallery-featured {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover .gallery-img { transform: scale(1.04); }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease;
+    }
+    .gallery-img i { font-size: 52px; color: rgba(255,255,255,0.88); filter: drop-shadow(0 2px 10px rgba(0,0,0,0.30)); }
+    .gallery-featured .gallery-img i { font-size: 80px; }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(92,45,10,0.65);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-caption {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-style: italic;
+      color: white;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       CAROUSEL LIGHTBOX
+    ============================================ */
+    .carousel-lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.94);
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-lb.open { display: flex; }
+
+    /* Top bar: category title + counter + close */
+    .carousel-topbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent);
+    }
+    .carousel-title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(255,255,255,0.88);
+    }
+    .carousel-counter {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      margin: 0 12px 0 auto;
+    }
+    .carousel-close-btn {
+      background: rgba(255,255,255,0.12);
+      border: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .carousel-close-btn:hover { background: var(--color-copper); }
+
+    /* Stage: arrows + display */
+    .carousel-stage {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 960px;
+      padding: 0 16px;
+    }
+    .carousel-display {
+      flex: 1;
+      height: 62vh;
+      max-height: 540px;
+      min-height: 260px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-display img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+      border-radius: 8px;
+      transition: opacity 0.3s ease;
+    }
+    .carousel-display img.active { display: block; }
+    .carousel-placeholder {
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      border-radius: 8px;
+    }
+    .carousel-placeholder.active { display: flex; }
+    .carousel-placeholder i {
+      font-size: 80px;
+      color: rgba(255,255,255,0.88);
+      filter: drop-shadow(0 4px 18px rgba(0,0,0,0.40));
+    }
+    .carousel-placeholder span {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+    }
+    /* Nav arrows */
+    .carousel-nav {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.15);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .carousel-nav:hover { background: var(--color-copper); border-color: var(--color-copper); }
+    .carousel-nav:disabled { opacity: 0.2; cursor: default; pointer-events: none; }
+    .carousel-nav.hidden { visibility: hidden; }
+
+    /* Bottom bar: caption + dots */
+    .carousel-bottom {
+      width: 100%;
+      padding: 14px 20px 18px;
+      text-align: center;
+      position: absolute;
+      bottom: 0; left: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+    }
+    .carousel-caption {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 10px;
+      min-height: 20px;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: var(--transition);
+    }
+    .carousel-dot.active {
+      background: var(--color-copper);
+      transform: scale(1.3);
+    }
+
+    /* Upload hint (shown when no images in category) */
+    .carousel-upload-hint {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .carousel-nav { width: 38px; height: 38px; font-size: 18px; }
+      .carousel-stage { gap: 8px; padding: 0 6px; }
+      .carousel-display { height: 52vw; min-height: 220px; }
+    }
+
+    /* ============================================
+       DEVOTIONAL MODAL
+    ============================================ */
+    .devo-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 2100;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      overflow-y: auto;
+    }
+    .devo-modal.open { display: flex; }
+
+    .devo-modal-content {
+      background: var(--color-white);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 680px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.40);
+      animation: modalSlideIn 0.28s ease;
+      margin: auto;
+    }
+    @keyframes modalSlideIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)    scale(1);    }
+    }
+
+    /* Header band — icon + gradient (same as devo card) */
+    .devo-modal-header {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+    }
+    .devo-modal-header i {
+      font-size: 64px;
+      color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 3px 10px rgba(0,0,0,0.28));
+    }
+    .devo-modal-category {
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.45);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 14px;
+      border-radius: 50px;
+    }
+
+    /* Close button */
+    .devo-modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(0,0,0,0.25);
+      border: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      z-index: 10;
+      transition: var(--transition);
+    }
+    .devo-modal-close:hover { background: var(--color-copper); }
+
+    /* Body */
+    .devo-modal-body {
+      padding: 36px 40px 40px;
+    }
+    @media (max-width: 520px) {
+      .devo-modal-body { padding: 28px 22px 32px; }
+    }
+
+    .devo-modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .devo-modal-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-mid-brown);
+      letter-spacing: 0.04em;
+    }
+
+    .devo-modal-title {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--color-dark-brown);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    /* Scripture verse block */
+    .devo-modal-verse {
+      border-left: 4px solid var(--color-copper);
+      margin: 24px 0;
+      padding: 14px 20px;
+      background: var(--color-cream);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .devo-modal-verse p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--color-dark-brown);
+      line-height: 1.65;
+      margin-bottom: 6px;
+    }
+    .devo-modal-verse cite {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      font-style: normal;
+    }
+
+    /* Content paragraphs */
+    .devo-modal-text p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--color-dark-brown);
+      margin-bottom: 16px;
+    }
+    .devo-modal-text p:last-child { margin-bottom: 0; }
+
+    /* Divider */
+    .devo-modal-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--color-copper);
+      border-radius: 2px;
+      margin: 0 0 24px 0;
+    }
+
+    /* ============================================
+       EVENT MODAL
+    ============================================ */
+    .event-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 2100;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      overflow-y: auto;
+    }
+    .event-modal.open { display: flex; }
+
+    .event-modal-content {
+      background: var(--color-white);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 640px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.40);
+      animation: modalSlideIn 0.28s ease;
+      margin: auto;
+    }
+
+    /* Header band */
+    .event-modal-header {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+    }
+    .event-modal-header i {
+      font-size: 60px;
+      color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 3px 10px rgba(0,0,0,0.28));
+    }
+    .event-modal-tag {
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.45);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 14px;
+      border-radius: 50px;
+    }
+    .event-modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(0,0,0,0.25);
+      border: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      z-index: 10;
+      transition: var(--transition);
+    }
+    .event-modal-close:hover { background: var(--color-copper); }
+
+    /* Body */
+    .event-modal-body {
+      padding: 32px 40px 40px;
+    }
+    @media (max-width: 520px) {
+      .event-modal-body { padding: 24px 20px 32px; }
+    }
+
+    .event-modal-title {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--color-dark-brown);
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    /* Schedule info block */
+    .event-schedule {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: var(--color-cream);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 480px) {
+      .event-schedule { grid-template-columns: 1fr; }
+    }
+    .event-schedule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .event-schedule-item i {
+      color: var(--color-copper);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .event-schedule-item > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .event-schedule-item .sch-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-mid-brown);
+    }
+    .event-schedule-item .sch-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-dark-brown);
+    }
+
+    /* Description */
+    .event-modal-desc p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--color-dark-brown);
+      margin-bottom: 14px;
+    }
+    .event-modal-desc p:last-child { margin-bottom: 0; }
+
+    /* What to expect list */
+    .event-modal-expect {
+      margin-top: 22px;
+    }
+    .event-modal-expect h4 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-dark-brown);
+      margin-bottom: 12px;
+    }
+    .event-modal-expect ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .event-modal-expect ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--color-dark-brown);
+      line-height: 1.55;
+    }
+    .event-modal-expect ul li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-copper);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* CTA button inside modal */
+    .event-modal-cta {
+      display: inline-flex;
+      margin-top: 28px;
+    }
+
+    /* ============================================
+       LOGO IMAGES — estilos para imágenes reales
+    ============================================ */
+
+    /* Logo en hero (grande, con borde circular y glow) */
+    .hero-logo-img {
+      width: clamp(260px, 36vw, 400px);
+      height: clamp(260px, 36vw, 400px);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      box-shadow:
+        0 0 0 6px rgba(192, 128, 64, 0.25),
+        0 0 0 14px rgba(192, 128, 64, 0.10);
+    }
+
+    /* Logo en navbar (pequeño, cuadrado con padding) */
+    .nav-logo-img {
+      width: 48px !important;
+      height: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Logo en footer */
+    .footer-logo-img {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      /* Borde dorado sutil para destacar sobre fondo oscuro */
+      outline: 2px solid rgba(192, 128, 64, 0.45);
+      outline-offset: 2px;
+    }
+
+    /* Foto real de la iglesia en la sección Our Story */
+    .story-image-real {
+      background: none !important;
+      padding: 0;
+    }
+    .story-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius);
+    }
+
+    /* ============================================
+       UTILITIES
+    ============================================ */
+    .text-center { text-align: center; }
+    .text-copper { color: var(--color-copper); }
+    .mb-0 { margin-bottom: 0 !important; }
+    .mt-8 { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+  </style>
+</head>
+<body>
+
+<!-- =========================================
+     ANNOUNCEMENT BAR
+========================================= -->
+<div class="announcement-bar">
+  <span class="es-only">Únete a nuestro próximo servicio dominical — Domingos 10:00 AM
+    <a href="#contact">Contáctanos</a>
+  </span>
+  <span class="en-only">Join our Sunday service — Sundays 10:00 AM
+    <a href="#contact">Contact Us</a>
+  </span>
+</div>
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <img
+          src="assets/img/logo-cream2.jpg"
+          alt="Unción con Gloria"
+          class="logo-svg nav-logo-img"
+        />
+        <div class="nav-logo-text">
+          Unción con Gloria
+          <span class="es-only">Iglesia · Costa Rica</span>
+          <span class="en-only">Church · Costa Rica</span>
+        </div>
+      </a>
+
+      <!-- Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#mission" class="es-only">Misión</a><a href="#mission" class="en-only">Mission</a></li>
+        <li><a href="#story" class="es-only">Nuestra Historia</a><a href="#story" class="en-only">Our Story</a></li>
+        <li><a href="#events" class="es-only">Eventos</a><a href="#events" class="en-only">Events</a></li>
+        <li><a href="#devotionals" class="es-only">Devocionales</a><a href="#devotionals" class="en-only">Devotionals</a></li>
+        <li><a href="#gallery" class="es-only">Galería</a><a href="#gallery" class="en-only">Gallery</a></li>
+        <li><a href="#contact" class="es-only">Contacto</a><a href="#contact" class="en-only">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- Language Switcher -->
+        <button class="nav-lang" id="langSwitcher" onclick="toggleLang()">
+          <span id="langLabel">ES | EN</span>
+        </button>
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- ── Columna Izquierda: Texto ── -->
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#D4956A" stroke-width="8"/></svg>
+          <span class="es-only">Fundada en 1999 · Pilas, Costa Rica</span>
+          <span class="en-only">Founded in 1999 · Pilas, Costa Rica</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="es-only">Una Iglesia bajo la<br><span class="highlight">Unción y Gloria</span><br>del Espíritu Santo</span>
+          <span class="en-only">A Church under the<br><span class="highlight">Anointing & Glory</span><br>of the Holy Spirit</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="es-only">Operando bajo el poder del Espíritu Santo para llevar Su gloria a las naciones. Te invitamos a ser parte de nuestra comunidad de fe.</span>
+          <span class="en-only">Operating under the power of the Holy Spirit to carry His glory to the nations. We invite you to be part of our faith community.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#events" class="btn btn-primary">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="es-only">Ver Próximos Eventos</span>
+            <span class="en-only">View Upcoming Events</span>
+          </a>
+          <a href="#story" class="btn btn-outline-light">
+            <span class="es-only">Nuestra Historia</span>
+            <span class="en-only">Our Story</span>
+          </a>
+        </div>
+
+        <div class="hero-verse">
+          <p class="es-only"><em>"Yo soy la vid; ustedes son las ramas. El que permanece en mí, como yo en él, dará mucho fruto."</em></p>
+          <p class="en-only"><em>"I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit."</em></p>
+          <cite>
+            <span class="es-only">Juan 15:5 · NVI</span>
+            <span class="en-only">John 15:5 · NIV</span>
+          </cite>
+        </div>
+      </div>
+
+      <!-- ── Columna Derecha: Logo Grande ── -->
+      <div class="hero-logo-display">
+        <div class="hero-logo-glow">
+          <img
+            src="assets/img/logo-cream2.jpg"
+            alt="Logo Unción con Gloria"
+            class="hero-logo-img"
+          />
+        </div>
+        <div class="hero-logo-name">
+          Unción con Gloria
+          <span class="es-only">Iglesia · Costa Rica</span>
+          <span class="en-only">Church · Costa Rica</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <i class="fa-solid fa-chevron-down"></i>
+    <span class="es-only">Explorar</span>
+    <span class="en-only">Explore</span>
+  </div>
+</section>
+
+<!-- =========================================
+     MISSION & VISION
+========================================= -->
+<section id="mission" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">
+        <span class="es-only">Propósito &amp; Dirección</span>
+        <span class="en-only">Purpose &amp; Direction</span>
+      </span>
+      <h2>
+        <span class="es-only">Misión y Visión</span>
+        <span class="en-only">Mission and Vision</span>
+      </h2>
+      <span class="divider"></span>
+    </div>
+    <div class="mv-grid">
+      <!-- Misión -->
+      <div class="mv-card bg-dark">
+        <div class="mv-icon">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <h3>
+          <span class="es-only">Misión</span>
+          <span class="en-only">Mission</span>
+        </h3>
+        <p class="lang-tag es-only">Español</p>
+        <p class="es-only">Unción con Gloria es una iglesia operando bajo la unción y el poder del Espíritu Santo para llevar su gloria a las naciones.</p>
+        <p class="lang-tag en-only">English</p>
+        <p class="en-only">Unción con Gloria is a church operating under the anointing and power of the Holy Spirit to carry His glory to the nations.</p>
+      </div>
+      <!-- Visión -->
+      <div class="mv-card bg-cream">
+        <div class="mv-icon">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+        <h3>
+          <span class="es-only">Visión</span>
+          <span class="en-only">Vision</span>
+        </h3>
+        <p class="lang-tag es-only">Español</p>
+        <p class="es-only">Ser una iglesia con gran pasión por los perdidos, buscando alcanzar y establecer a la comunidad en una vida con propósito para Jesús y el reino de Dios.</p>
+        <p class="lang-tag en-only">English</p>
+        <p class="en-only">To be a church with a great passion for the lost, seeking to reach and establish the community in a life of purpose for Jesus and the kingdom of God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     BRAND VALUES
+========================================= -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">
+        <span class="es-only">Lo que nos define</span>
+        <span class="en-only">Who We Are</span>
+      </span>
+      <h2>
+        <span class="es-only">Nuestros Valores</span>
+        <span class="en-only">Our Core Values</span>
+      </h2>
+      <span class="divider"></span>
+    </div>
+    <div class="values-grid">
+      <!-- Reverencia -->
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-hands-praying"></i></div>
+        <h4>
+          <span class="es-only">Reverencia y Santidad</span>
+          <span class="en-only">Reverence &amp; Holiness</span>
+        </h4>
+        <p class="es-only">Todo lo que hacemos evoca solemnidad y profundidad espiritual. Nunca la trivialidad.</p>
+        <p class="en-only">Everything we do evokes solemnity and spiritual depth. Never triviality.</p>
+      </div>
+      <!-- Autenticidad -->
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h4>
+          <span class="es-only">Autenticidad</span>
+          <span class="en-only">Authenticity</span>
+        </h4>
+        <p class="es-only">Conectamos con la tierra, las raíces y el crecimiento orgánico de la fe a través de colores naturales y cálidos.</p>
+        <p class="en-only">We connect with the earth, roots and organic growth of faith through natural, warm colors.</p>
+      </div>
+      <!-- Comunidad -->
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h4>
+          <span class="es-only">Comunidad</span>
+          <span class="en-only">Community</span>
+        </h4>
+        <p class="es-only">Transmitimos acogida y pertenencia, invitando a todos a ser parte de la familia de Dios.</p>
+        <p class="en-only">We convey welcome and belonging, inviting everyone to be part of God's family.</p>
+      </div>
+      <!-- Crecimiento -->
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h4>
+          <span class="es-only">Crecimiento</span>
+          <span class="en-only">Growth</span>
+        </h4>
+        <p class="es-only">La planta del logo simboliza fruto espiritual. El diseño evoca vida en expansión continua hacia el reino de Dios.</p>
+        <p class="en-only">The plant in the logo symbolizes spiritual fruit. The design evokes life in continuous expansion toward God's kingdom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     OUR STORY
+========================================= -->
+<section id="story" class="section">
+  <div class="container">
+    <div class="story-grid">
+      <!-- Image side -->
+      <div class="story-image">
+        <div class="story-image-main story-image-real">
+          <img
+            src="assets/img/iglesia.jpg"
+            alt="Iglesia Unción con Gloria"
+            class="story-photo"
+          />
+        </div>
+        <div class="story-badge">
+          <div class="year">1999</div>
+          <div class="label">
+            <span class="es-only">Fundada</span>
+            <span class="en-only">Founded</span>
+          </div>
+        </div>
+      </div>
+      <!-- Content side -->
+      <div class="story-content">
+        <span class="section-label">
+          <span class="es-only">Reseña Histórica</span>
+          <span class="en-only">Our Story</span>
+        </span>
+        <h2>
+          <span class="es-only">26 años llevando la gloria de Dios a las naciones</span>
+          <span class="en-only">26 years carrying God's glory to the nations</span>
+        </h2>
+        <p class="es-only">
+          La iglesia nació el <strong>26 de octubre de 1999</strong>. Éramos un pequeño grupo que nos congregábamos en una casa en la comunidad de Pilas. De esta forma empezamos a establecer la iglesia, donde fue muy difícil; luchamos contra muchas adversidades y tuvimos varias propiedades.
+        </p>
+        <p class="es-only">
+          Después de 12 años, de una forma milagrosa, Dios nos dio una finca de dos hectáreas donde estamos establecidos. Logramos construir el templo y un proyecto glorioso para expandir el reino de Dios.
+        </p>
+        <p class="es-only"><em style="color: var(--color-copper);">Ha sido solo la mano de Dios. ¡Gloria a Dios!</em></p>
+        <p class="en-only">
+          The church was born on <strong>October 26, 1999</strong>. We were a small group gathering in a home in the community of Pilas. From there, we began to establish the church — it was very difficult; we faced many adversities and moved through various properties.
+        </p>
+        <p class="en-only">
+          After 12 years, in a miraculous way, God gave us a two-hectare farm where we are now established. We were able to build the sanctuary and a glorious project to expand the kingdom of God.
+        </p>
+        <p class="en-only"><em style="color: var(--color-copper);">It has been only the hand of God. Glory to God!</em></p>
+
+        <div class="story-stats">
+          <div class="stat">
+            <div class="num">26+</div>
+            <div class="lbl">
+              <span class="es-only">Años de fe</span>
+              <span class="en-only">Years of faith</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="num">2ha</div>
+            <div class="lbl">
+              <span class="es-only">Finca propia</span>
+              <span class="en-only">Owned land</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="num">2</div>
+            <div class="lbl">
+              <span class="es-only">Idiomas (ES/EN)</span>
+              <span class="en-only">Languages (ES/EN)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-32">
+          <a href="#contact" class="btn btn-primary">
+            <span class="es-only">Visítanos este domingo</span>
+            <span class="en-only">Visit Us This Sunday</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FEATURED VERSE
+========================================= -->
+<div class="verse-section" id="verse">
+  <div class="container">
+    <div class="verse-block">
+      <div class="verse-decoration">"</div>
+      <p class="verse-text es-only">
+        "Todo lo que hagan, háganlo de corazón,<br>como para el Señor y no para los hombres."
+      </p>
+      <p class="verse-text en-only">
+        "Whatever you do, work heartily,<br>as for the Lord and not for men."
+      </p>
+      <div class="verse-divider"></div>
+      <p class="verse-ref">
+        <span class="es-only">Colosenses 3:23 · NVI</span>
+        <span class="en-only">Colossians 3:23 · ESV</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+     EVENTS
+========================================= -->
+<section id="events" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">
+        <span class="es-only">Próximas Fechas</span>
+        <span class="en-only">Upcoming Dates</span>
+      </span>
+      <h2>
+        <span class="es-only">Eventos y Reuniones</span>
+        <span class="en-only">Events &amp; Gatherings</span>
+      </h2>
+      <p>
+        <span class="es-only">Únete a nosotros en cada uno de nuestros servicios y actividades especiales.</span>
+        <span class="en-only">Join us in each of our services and special activities.</span>
+      </p>
+      <span class="divider"></span>
+    </div>
+
+    <div class="events-grid">
+      <!-- Event 1 -->
+      <div class="event-card">
+        <div class="event-img event-img--sunday">
+          <div class="card-icon-block">
+            <i class="fa-solid fa-church"></i>
+            <span class="es-only">Servicio Dominical</span>
+            <span class="en-only">Sunday Service</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-meta">
+            <div class="event-date">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span class="es-only">Dom 2 Mar, 10:00 AM</span>
+              <span class="en-only">Sun Mar 2, 10:00 AM</span>
+            </div>
+            <span class="event-tag es-only">Servicio</span>
+            <span class="event-tag en-only">Service</span>
+          </div>
+          <h4>
+            <span class="es-only">Servicio Dominical</span>
+            <span class="en-only">Sunday Service</span>
+          </h4>
+          <p>
+            <span class="es-only">Únete a nuestra reunión semanal de adoración, predicación de la Palabra y comunidad en el Señor.</span>
+            <span class="en-only">Join our weekly gathering of worship, preaching of the Word, and community in the Lord.</span>
+          </p>
+          <div class="event-footer">
+            <div class="event-location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Pilas, Costa Rica</span>
+            </div>
+            <a href="#" class="event-link" data-event="1" onclick="openEventModal(1);return false;">
+              <span class="es-only">Más info</span>
+              <span class="en-only">More info</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card">
+        <div class="event-img event-img--prayer">
+          <div class="card-icon-block">
+            <i class="fa-solid fa-hands-praying"></i>
+            <span class="es-only">Reunión de Oración</span>
+            <span class="en-only">Prayer Meeting</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-meta">
+            <div class="event-date">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span class="es-only">Mié 5 Mar, 7:00 PM</span>
+              <span class="en-only">Wed Mar 5, 7:00 PM</span>
+            </div>
+            <span class="event-tag es-only">Oración</span>
+            <span class="event-tag en-only">Prayer</span>
+          </div>
+          <h4>
+            <span class="es-only">Reunión de Oración</span>
+            <span class="en-only">Prayer Meeting</span>
+          </h4>
+          <p>
+            <span class="es-only">Te invitamos a ser parte de nuestra próxima reunión de oración. Juntos buscamos el rostro de Dios.</span>
+            <span class="en-only">We invite you to be part of our next prayer meeting. Together we seek the face of God.</span>
+          </p>
+          <div class="event-footer">
+            <div class="event-location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Pilas, Costa Rica</span>
+            </div>
+            <a href="#" class="event-link" data-event="2" onclick="openEventModal(2);return false;">
+              <span class="es-only">Más info</span>
+              <span class="en-only">More info</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-card">
+        <div class="event-img event-img--worship">
+          <div class="card-icon-block">
+            <i class="fa-solid fa-music"></i>
+            <span class="es-only">Noche de Adoración</span>
+            <span class="en-only">Night of Worship</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-meta">
+            <div class="event-date">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span class="es-only">Sáb 15 Mar, 6:00 PM</span>
+              <span class="en-only">Sat Mar 15, 6:00 PM</span>
+            </div>
+            <span class="event-tag es-only">Especial</span>
+            <span class="event-tag en-only">Special</span>
+          </div>
+          <h4>
+            <span class="es-only">Noche de Adoración</span>
+            <span class="en-only">Night of Worship</span>
+          </h4>
+          <p>
+            <span class="es-only">Una noche especial de alabanza y adoración al Señor. Ven y experimenta la gloria de Dios en comunidad.</span>
+            <span class="en-only">A special night of praise and worship to the Lord. Come and experience the glory of God in community.</span>
+          </p>
+          <div class="event-footer">
+            <div class="event-location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Pilas, Costa Rica</span>
+            </div>
+            <a href="#" class="event-link" data-event="3" onclick="openEventModal(3);return false;">
+              <span class="es-only">Más info</span>
+              <span class="en-only">More info</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-48">
+      <a href="#contact" class="btn btn-secondary">
+        <i class="fa-solid fa-calendar-plus"></i>
+        <span class="es-only">Ver todos los eventos</span>
+        <span class="en-only">View all events</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     DEVOTIONALS
+========================================= -->
+<section id="devotionals" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">
+        <span class="es-only">Palabra &amp; Reflexión</span>
+        <span class="en-only">Word &amp; Reflection</span>
+      </span>
+      <h2>
+        <span class="es-only">Devocionales</span>
+        <span class="en-only">Devotionals</span>
+      </h2>
+      <p>
+        <span class="es-only">Reflexiones bíblicas para alimentar tu vida espiritual cada día.</span>
+        <span class="en-only">Biblical reflections to nourish your spiritual life every day.</span>
+      </p>
+      <span class="divider"></span>
+    </div>
+
+    <div class="devos-grid">
+      <!-- Devo 1 -->
+      <div class="devo-card">
+        <div class="devo-img" style="background: linear-gradient(135deg, #8B5728 0%, #5C2D0A 100%);">
+          <i class="fa-solid fa-book-open"></i>
+          <span class="devo-category es-only">Fe</span>
+          <span class="devo-category en-only">Faith</span>
+        </div>
+        <div class="devo-body">
+          <div class="devo-meta">
+            <span class="devo-date es-only">24 Feb 2025</span>
+            <span class="devo-date en-only">Feb 24, 2025</span>
+          </div>
+          <h4>
+            <span class="es-only">Permanecer en la Vid</span>
+            <span class="en-only">Abiding in the Vine</span>
+          </h4>
+          <p>
+            <span class="es-only">Jesús nos llama a permanecer en Él como ramas que dependen de la vid para dar fruto. Esta permanencia no es pasiva, sino una decisión diaria de...</span>
+            <span class="en-only">Jesus calls us to remain in Him as branches depend on the vine to bear fruit. This abiding is not passive, but a daily decision to...</span>
+          </p>
+          <a href="#" class="devo-link" data-devo="1" onclick="openDevoModal(1);return false;">
+            <span class="es-only">Leer más</span>
+            <span class="en-only">Read more</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Devo 2 -->
+      <div class="devo-card">
+        <div class="devo-img" style="background: linear-gradient(135deg, #C08040 0%, #8B5728 100%);">
+          <i class="fa-solid fa-hands-praying"></i>
+          <span class="devo-category es-only">Oración</span>
+          <span class="devo-category en-only">Prayer</span>
+        </div>
+        <div class="devo-body">
+          <div class="devo-meta">
+            <span class="devo-date es-only">17 Feb 2025</span>
+            <span class="devo-date en-only">Feb 17, 2025</span>
+          </div>
+          <h4>
+            <span class="es-only">El Poder de la Oración Persistente</span>
+            <span class="en-only">The Power of Persistent Prayer</span>
+          </h4>
+          <p>
+            <span class="es-only">La oración no es un último recurso, es nuestra primera respuesta. Dios nos invita a buscar su rostro con persistencia y confianza absoluta en su...</span>
+            <span class="en-only">Prayer is not a last resort, it is our first response. God invites us to seek His face with persistence and absolute trust in His...</span>
+          </p>
+          <a href="#" class="devo-link" data-devo="2" onclick="openDevoModal(2);return false;">
+            <span class="es-only">Leer más</span>
+            <span class="en-only">Read more</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Devo 3 -->
+      <div class="devo-card">
+        <div class="devo-img" style="background: linear-gradient(135deg, #D4956A 0%, #8B5728 100%);">
+          <i class="fa-solid fa-cross"></i>
+          <span class="devo-category es-only">Gracia</span>
+          <span class="devo-category en-only">Grace</span>
+        </div>
+        <div class="devo-body">
+          <div class="devo-meta">
+            <span class="devo-date es-only">10 Feb 2025</span>
+            <span class="devo-date en-only">Feb 10, 2025</span>
+          </div>
+          <h4>
+            <span class="es-only">La Gracia que Todo lo Transforma</span>
+            <span class="en-only">The Grace that Transforms Everything</span>
+          </h4>
+          <p>
+            <span class="es-only">La gracia de Dios no solo perdona, sino que transforma. Cuando comprendemos la profundidad de su amor, nuestra vida se convierte en un testimonio vivo...</span>
+            <span class="en-only">God's grace doesn't just forgive, it transforms. When we understand the depth of His love, our life becomes a living testimony...</span>
+          </p>
+          <a href="#" class="devo-link" data-devo="3" onclick="openDevoModal(3);return false;">
+            <span class="es-only">Leer más</span>
+            <span class="en-only">Read more</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-48">
+      <a href="#" class="btn btn-primary">
+        <i class="fa-solid fa-book-bible"></i>
+        <span class="es-only">Ver todos los devocionales</span>
+        <span class="en-only">View all devotionals</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY
+========================================= -->
+<section id="gallery" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">
+        <span class="es-only">Momentos &amp; Memorias</span>
+        <span class="en-only">Moments &amp; Memories</span>
+      </span>
+      <h2>
+        <span class="es-only">Galería</span>
+        <span class="en-only">Gallery</span>
+      </h2>
+      <p>
+        <span class="es-only">Momentos de adoración, comunidad y servicio en nuestra congregación.</span>
+        <span class="en-only">Moments of worship, community and service in our congregation.</span>
+      </p>
+      <span class="divider"></span>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Featured large item -->
+      <div class="gallery-item gallery-featured" data-gallery-index="0" data-caption-es="Servicio de adoración" data-caption-en="Worship service">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #3a1b05 0%, #8B5728 60%, #C08040 100%);">
+          <i class="fa-solid fa-hands-praying"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Servicio de adoración</span>
+          <span class="gallery-caption en-only">Worship service</span>
+        </div>
+      </div>
+      <!-- Items -->
+      <div class="gallery-item" data-gallery-index="1" data-caption-es="Comunidad" data-caption-en="Community">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #5C2D0A 0%, #8B5728 100%);">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Comunidad</span>
+          <span class="gallery-caption en-only">Community</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-gallery-index="2" data-caption-es="Nuestro templo" data-caption-en="Our sanctuary">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #8B5728 0%, #D4956A 100%);">
+          <i class="fa-solid fa-church"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Nuestro templo</span>
+          <span class="gallery-caption en-only">Our sanctuary</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-gallery-index="3" data-caption-es="Ministerio de jóvenes" data-caption-en="Youth ministry">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #C08040 0%, #5C2D0A 100%);">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Ministerio de jóvenes</span>
+          <span class="gallery-caption en-only">Youth ministry</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-gallery-index="4" data-caption-es="Bautismos" data-caption-en="Baptisms">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #D4956A 0%, #8B5728 100%);">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Bautismos</span>
+          <span class="gallery-caption en-only">Baptisms</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-gallery-index="5" data-caption-es="Oración e intercesión" data-caption-en="Prayer &amp; intercession">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #5C2D0A 0%, #C08040 100%);">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Oración e intercesión</span>
+          <span class="gallery-caption en-only">Prayer &amp; intercession</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-gallery-index="6" data-caption-es="Finca de la iglesia" data-caption-en="Church grounds">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #8B5728 0%, #5C2D0A 100%);">
+          <i class="fa-solid fa-tree"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Finca de la iglesia</span>
+          <span class="gallery-caption en-only">Church grounds</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Lightbox -->
+    <div class="carousel-lb" id="carouselLb" onclick="closeCarousel()">
+      <!-- Top bar -->
+      <div class="carousel-topbar">
+        <span class="carousel-title" id="carouselTitle"></span>
+        <span class="carousel-counter" id="carouselCounter"></span>
+        <button class="carousel-close-btn" onclick="closeCarousel()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Stage -->
+      <div class="carousel-stage" onclick="event.stopPropagation()">
+        <button class="carousel-nav" id="carouselPrev" onclick="carouselMove(-1)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="carousel-display" id="carouselDisplay">
+          <img id="carouselImg" src="" alt="" class="" />
+          <div class="carousel-placeholder" id="carouselPlaceholder">
+            <i id="carouselPlaceholderIcon"></i>
+            <span id="carouselPlaceholderText"></span>
+            <span class="carousel-upload-hint es-only">📁 Próximamente más fotos</span>
+            <span class="carousel-upload-hint en-only">📁 More photos coming soon</span>
+          </div>
+        </div>
+        <button class="carousel-nav" id="carouselNext" onclick="carouselMove(1)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="carousel-bottom" onclick="event.stopPropagation()">
+        <p class="carousel-caption" id="carouselCaption"></p>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     MAP NAVIGATION OPTIONS SHEET
+========================================= -->
+<div class="map-nav-overlay" id="mapNavOverlay" onclick="closeMapOptions()">
+  <div class="map-nav-sheet" onclick="event.stopPropagation()">
+    <h4>
+      <span class="es-only">¿Cómo deseas navegar?</span>
+      <span class="en-only">How would you like to navigate?</span>
+    </h4>
+    <p class="map-nav-subtext">Iglesia Bíblica Unción con Gloria<br>Pilas, Costa Rica</p>
+    <div class="map-nav-options">
+      <a href="https://maps.app.goo.gl/ruzN5HM59zSYaF878"
+         target="_blank" rel="noopener noreferrer"
+         class="map-nav-opt map-nav-gmaps"
+         onclick="closeMapOptions()">
+        <i class="fa-brands fa-google"></i>
+        <span>Google Maps</span>
+      </a>
+      <a href="https://waze.com/ul?ll=10.0283998,-84.2992437&navigate=yes"
+         target="_blank" rel="noopener noreferrer"
+         class="map-nav-opt map-nav-waze"
+         onclick="closeMapOptions()">
+        <i class="fa-brands fa-waze"></i>
+        <span>Waze</span>
+      </a>
+    </div>
+    <button class="map-nav-cancel" onclick="closeMapOptions()">
+      <span class="es-only">Cancelar</span>
+      <span class="en-only">Cancel</span>
+    </button>
+  </div>
+</div>
+
+<!-- =========================================
+     EVENT MODAL
+========================================= -->
+<div class="event-modal" id="eventModal" onclick="closeEventModal()">
+  <div class="event-modal-content" onclick="event.stopPropagation()">
+    <div class="event-modal-header" id="eventModalHeader">
+      <button class="event-modal-close" onclick="closeEventModal()"><i class="fa-solid fa-xmark"></i></button>
+      <i id="eventModalIcon" class="fa-solid fa-church"></i>
+      <span class="event-modal-tag" id="eventModalTag"></span>
+    </div>
+    <div class="event-modal-body">
+      <h2 class="event-modal-title" id="eventModalTitle"></h2>
+      <div class="devo-modal-divider"></div>
+
+      <!-- Schedule block -->
+      <div class="event-schedule">
+        <div class="event-schedule-item">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div>
+            <span class="sch-label" id="eventModalDateLabel"></span>
+            <span class="sch-value" id="eventModalDate"></span>
+          </div>
+        </div>
+        <div class="event-schedule-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <span class="sch-label" id="eventModalTimeLabel"></span>
+            <span class="sch-value" id="eventModalTime"></span>
+          </div>
+        </div>
+        <div class="event-schedule-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span class="sch-label" id="eventModalLocationLabel"></span>
+            <span class="sch-value" id="eventModalLocation"></span>
+          </div>
+        </div>
+        <div class="event-schedule-item">
+          <i class="fa-solid fa-rotate"></i>
+          <div>
+            <span class="sch-label" id="eventModalFreqLabel"></span>
+            <span class="sch-value" id="eventModalFreq"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="event-modal-desc" id="eventModalDesc"></div>
+
+      <!-- What to expect -->
+      <div class="event-modal-expect">
+        <h4 id="eventModalExpectTitle"></h4>
+        <ul id="eventModalExpectList"></ul>
+      </div>
+
+      <!-- CTA -->
+      <a href="#contact" class="btn btn-primary event-modal-cta" onclick="closeEventModal()">
+        <i class="fa-solid fa-envelope"></i>
+        <span id="eventModalCta"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+     DEVOTIONAL MODAL
+========================================= -->
+<div class="devo-modal" id="devoModal" onclick="closeDevoModal()">
+  <div class="devo-modal-content" onclick="event.stopPropagation()">
+    <!-- Header band: populated by JS -->
+    <div class="devo-modal-header" id="devoModalHeader">
+      <button class="devo-modal-close" onclick="closeDevoModal()"><i class="fa-solid fa-xmark"></i></button>
+      <i id="devoModalIcon" class="fa-solid fa-book-open"></i>
+      <span class="devo-modal-category" id="devoModalCategory"></span>
+    </div>
+    <!-- Body: populated by JS -->
+    <div class="devo-modal-body">
+      <div class="devo-modal-meta">
+        <span class="devo-modal-date" id="devoModalDate"></span>
+      </div>
+      <h2 class="devo-modal-title" id="devoModalTitle"></h2>
+      <div class="devo-modal-divider"></div>
+      <!-- Scripture verse -->
+      <blockquote class="devo-modal-verse" id="devoModalVerse">
+        <p id="devoModalVerseText"></p>
+        <cite id="devoModalVerseRef"></cite>
+      </blockquote>
+      <!-- Full text content -->
+      <div class="devo-modal-text" id="devoModalText"></div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="contact-info">
+        <span class="section-label">
+          <span class="es-only">Estamos aquí para ti</span>
+          <span class="en-only">We're here for you</span>
+        </span>
+        <h2>
+          <span class="es-only">Contáctanos</span>
+          <span class="en-only">Contact Us</span>
+        </h2>
+        <p>
+          <span class="es-only">¡Bienvenido a Unción con Gloria — un lugar donde la Palabra de Dios transforma vidas! Nos encantaría conocerte.</span>
+          <span class="en-only">Welcome to Unción con Gloria — a place where God's Word transforms lives! We'd love to meet you.</span>
+        </p>
+
+        <!-- Map card -->
+        <div class="map-card">
+          <div class="map-iframe-wrap">
+            <iframe
+              src="https://maps.google.com/maps?q=10.0283998,-84.2992437&z=17&output=embed"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Iglesia Bíblica Unción con Gloria"
+            ></iframe>
+          </div>
+          <div class="map-card-footer">
+            <div class="map-place-info">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span class="map-place-name">Unción con Gloria</span>
+                <span class="map-place-addr">Pilas, Costa Rica</span>
+              </div>
+            </div>
+            <button class="btn btn-primary map-dir-btn" onclick="openMapOptions()">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span class="es-only">¿Cómo llegar?</span>
+              <span class="en-only">Directions</span>
+            </button>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="contact-item-text">
+            <h5>
+              <span class="es-only">Servicios</span>
+              <span class="en-only">Services</span>
+            </h5>
+            <p class="es-only">Domingos 10:00 AM · Miércoles 7:00 PM</p>
+            <p class="en-only">Sundays 10:00 AM · Wednesdays 7:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="contact-item-text">
+            <h5>
+              <span class="es-only">Sitio Web</span>
+              <span class="en-only">Website</span>
+            </h5>
+            <p>uncioncongloria.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p>info@uncioncongloria.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form">
+        <h3 style="margin-bottom:28px;">
+          <span class="es-only">Envíanos un mensaje</span>
+          <span class="en-only">Send us a message</span>
+        </h3>
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label>
+              <span class="es-only">Nombre</span>
+              <span class="en-only">Name</span>
+            </label>
+            <input type="text" placeholder="Tu nombre" class="es-only">
+            <input type="text" placeholder="Your name" class="en-only">
+          </div>
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <label>
+            <span class="es-only">Asunto</span>
+            <span class="en-only">Subject</span>
+          </label>
+          <select>
+            <option class="es-only">Información general</option>
+            <option class="en-only">General Information</option>
+            <option class="es-only">Solicitud de oración</option>
+            <option class="en-only">Prayer Request</option>
+            <option class="es-only">Visitar la iglesia</option>
+            <option class="en-only">Visit the Church</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>
+            <span class="es-only">Mensaje</span>
+            <span class="en-only">Message</span>
+          </label>
+          <textarea placeholder="Escribe tu mensaje aquí..." class="es-only"></textarea>
+          <textarea placeholder="Write your message here..." class="en-only"></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span class="es-only">Enviar Mensaje</span>
+          <span class="en-only">Send Message</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="logo-wrap">
+            <img
+              src="assets/img/logo-cream.jpg"
+              alt="Unción con Gloria"
+              class="logo-svg footer-logo-img"
+            />
+            <div class="nav-logo-text" style="color:white;">
+              Unción con Gloria
+              <span style="color: var(--color-copper);" class="es-only">Iglesia · Costa Rica</span>
+              <span style="color: var(--color-copper);" class="en-only">Church · Costa Rica</span>
+            </div>
+          </div>
+          <p class="es-only">Una iglesia operando bajo la unción y el poder del Espíritu Santo para llevar su gloria a las naciones desde 1999.</p>
+          <p class="en-only">A church operating under the anointing and power of the Holy Spirit to carry His glory to the nations since 1999.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-col">
+          <h5>
+            <span class="es-only">Navegación</span>
+            <span class="en-only">Navigation</span>
+          </h5>
+          <ul>
+            <li><a href="#mission" class="es-only">Misión y Visión</a><a href="#mission" class="en-only">Mission &amp; Vision</a></li>
+            <li><a href="#story" class="es-only">Nuestra Historia</a><a href="#story" class="en-only">Our Story</a></li>
+            <li><a href="#events" class="es-only">Eventos</a><a href="#events" class="en-only">Events</a></li>
+            <li><a href="#devotionals" class="es-only">Devocionales</a><a href="#devotionals" class="en-only">Devotionals</a></li>
+            <li><a href="#gallery" class="es-only">Galería</a><a href="#gallery" class="en-only">Gallery</a></li>
+            <li><a href="#contact" class="es-only">Contacto</a><a href="#contact" class="en-only">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h5>
+            <span class="es-only">Servicios</span>
+            <span class="en-only">Services</span>
+          </h5>
+          <ul>
+            <li><a href="#" class="es-only">Servicio Dominical</a><a href="#" class="en-only">Sunday Service</a></li>
+            <li><a href="#" class="es-only">Reunión de Oración</a><a href="#" class="en-only">Prayer Meeting</a></li>
+            <li><a href="#" class="es-only">Escuela Bíblica</a><a href="#" class="en-only">Bible School</a></li>
+            <li><a href="#" class="es-only">Grupos de Vida</a><a href="#" class="en-only">Life Groups</a></li>
+            <li><a href="#" class="es-only">Ministerio de Jóvenes</a><a href="#" class="en-only">Youth Ministry</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h5>
+            <span class="es-only">Contacto</span>
+            <span class="en-only">Contact</span>
+          </h5>
+          <p class="es-only" style="margin-bottom:12px;">Pilas, Costa Rica</p>
+          <p class="en-only" style="margin-bottom:12px;">Pilas, Costa Rica</p>
+          <p style="margin-bottom:8px;"><a href="mailto:info@uncioncongloria.com" style="color:var(--color-copper);">info@uncioncongloria.com</a></p>
+          <p style="margin-bottom:16px;">uncioncongloria.com</p>
+          <p class="es-only" style="font-size:12px;color:rgba(255,255,255,0.4);">Dom 10:00 AM · Mié 7:00 PM</p>
+          <p class="en-only" style="font-size:12px;color:rgba(255,255,255,0.4);">Sun 10:00 AM · Wed 7:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p class="es-only">&copy; 2025 Iglesia Unción con Gloria · Pilas, Costa Rica · Todos los derechos reservados</p>
+        <p class="en-only">&copy; 2025 Iglesia Unción con Gloria · Pilas, Costa Rica · All rights reserved</p>
+        <p>
+          <span class="es-only">Versión ES · <a href="#" onclick="setLang('en'); return false;">Ver en inglés</a></span>
+          <span class="en-only">EN Version · <a href="#" onclick="setLang('es'); return false;">Ver en español</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+<script>
+  // Language switcher
+  const html = document.documentElement;
+  let currentLang = 'es';
+
+  function toggleLang() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    setLang(currentLang);
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    html.setAttribute('lang', lang);
+    html.setAttribute('data-lang', lang);
+    document.getElementById('langLabel').textContent = lang === 'es' ? 'ES | EN' : 'EN | ES';
+    // Update page title
+    document.title = lang === 'es'
+      ? 'Unción con Gloria | Iglesia'
+      : 'Unción con Gloria | Church';
+  }
+
+  // Sticky nav scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 4px 24px rgba(92,45,10,0.18)';
+    } else {
+      navbar.style.boxShadow = '0 2px 16px rgba(92,45,10,0.09)';
+    }
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    links.classList.toggle('open');
+  }
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  /* =============================================
+     GALLERY CAROUSEL — carga dinámica desde manifest.json
+     Para agregar fotos:
+       1. Sube la imagen a assets/img/gallery/<categoria>/
+       2. Ejecuta: scripts/generate-gallery.ps1
+       3. El manifest.json se actualiza automáticamente
+       4. Sube los cambios → ¡listo!
+  ============================================= */
+  let galleryData = [];
+  let carouselCurrent = null;
+  let carouselIdx = 0;
+  let carouselTouchX = 0;
+
+  // Cargar manifest.json dinámicamente
+  async function initGallery() {
+    // Construir URL absoluta para evitar problemas de path relativo
+    const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+    const manifestUrl = base + 'assets/img/gallery/manifest.json?t=' + Date.now();
+
+    try {
+      const res = await fetch(manifestUrl, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const manifest = await res.json();
+      galleryData = manifest.categories || [];
+      console.info('[Gallery] Manifest cargado:', galleryData.length, 'categorías');
+    } catch (err) {
+      console.warn('[Gallery] No se pudo cargar manifest.json:', err.message);
+      galleryData = [];
+    }
+    bindGalleryClicks();
+  }
+
+  function bindGalleryClicks() {
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const idx = parseInt(item.dataset.galleryIndex ?? -1);
+        if (idx >= 0 && galleryData[idx]) {
+          openCarousel(idx);
+        } else if (idx >= 0) {
+          console.warn('[Gallery] No hay datos para el índice', idx, '— ¿manifest.json cargado?');
+        }
+      });
+    });
+  }
+
+  initGallery();
+
+  function openCarousel(galleryIdx) {
+    carouselCurrent = galleryData[galleryIdx];
+    carouselIdx = 0;
+    renderCarousel();
+    document.getElementById('carouselLb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function renderCarousel() {
+    const d = carouselCurrent;
+    const lang = document.documentElement.getAttribute('data-lang') || 'es';
+    const isEs = lang === 'es';
+    const hasImages = d.images.length > 0;
+
+    // Title
+    document.getElementById('carouselTitle').textContent = isEs ? d.titleEs : d.titleEn;
+
+    const imgEl  = document.getElementById('carouselImg');
+    const phBox  = document.getElementById('carouselPlaceholder');
+    const phIcon = document.getElementById('carouselPlaceholderIcon');
+    const phText = document.getElementById('carouselPlaceholderText');
+
+    if (hasImages) {
+      const curr = d.images[carouselIdx];
+
+      // Fade-out → swap src → fade-in
+      imgEl.style.opacity = '0';
+      phBox.classList.remove('active');
+      phBox.style.background = '';
+
+      imgEl.onerror = () => {
+        // Imagen no encontrada: mostrar placeholder con icono
+        console.warn('[Gallery] Imagen no encontrada:', curr.src);
+        imgEl.classList.remove('active');
+        phBox.classList.add('active');
+        phBox.style.background = d.bg;
+        phIcon.className = d.icon;
+        phText.textContent = '';
+      };
+      imgEl.onload = () => {
+        imgEl.style.opacity = '1';
+      };
+
+      imgEl.src = curr.src;
+      imgEl.alt = isEs ? curr.captionEs : curr.captionEn;
+      imgEl.classList.add('active');
+      imgEl.style.transition = 'opacity 0.3s ease';
+
+      document.getElementById('carouselCaption').textContent = isEs ? curr.captionEs : curr.captionEn;
+      document.getElementById('carouselCounter').textContent = d.images.length > 1
+        ? `${carouselIdx + 1} / ${d.images.length}` : '';
+    } else {
+      // Placeholder
+      imgEl.classList.remove('active');
+      imgEl.src = '';
+      phBox.classList.add('active');
+      phBox.style.background = d.bg;
+      phIcon.className = d.icon;
+      phText.textContent = isEs ? d.titleEs : d.titleEn;
+      document.getElementById('carouselCaption').textContent = '';
+      document.getElementById('carouselCounter').textContent = '';
+    }
+
+    // Nav arrows visibility
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const show = hasImages && d.images.length > 1;
+    prevBtn.classList.toggle('hidden', !show);
+    nextBtn.classList.toggle('hidden', !show);
+
+    // Dots
+    const dotsEl = document.getElementById('carouselDots');
+    if (hasImages && d.images.length > 1) {
+      dotsEl.innerHTML = d.images.map((_, i) =>
+        `<button class="carousel-dot${i === carouselIdx ? ' active' : ''}" onclick="carouselGoto(${i})"></button>`
+      ).join('');
+    } else {
+      dotsEl.innerHTML = '';
+    }
+  }
+
+  function carouselMove(dir) {
+    if (!carouselCurrent || carouselCurrent.images.length === 0) return;
+    carouselIdx = (carouselIdx + dir + carouselCurrent.images.length) % carouselCurrent.images.length;
+    renderCarousel();
+  }
+
+  function carouselGoto(idx) {
+    carouselIdx = idx;
+    renderCarousel();
+  }
+
+  function closeCarousel() {
+    document.getElementById('carouselLb').classList.remove('open');
+    document.body.style.overflow = '';
+    carouselCurrent = null;
+  }
+
+  // Keyboard: arrows + Escape
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('carouselLb');
+    if (lb.classList.contains('open')) {
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); carouselMove(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); carouselMove(1);  }
+      if (e.key === 'Escape')     { closeCarousel(); }
+      return;
+    }
+    if (e.key === 'Escape') { closeDevoModal(); closeEventModal(); closeMapOptions(); }
+  });
+
+  // Touch swipe support
+  const carouselEl = document.getElementById('carouselLb');
+  carouselEl.addEventListener('touchstart', e => {
+    carouselTouchX = e.touches[0].clientX;
+  }, { passive: true });
+  carouselEl.addEventListener('touchend', e => {
+    const diff = carouselTouchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 45) carouselMove(diff > 0 ? 1 : -1);
+  }, { passive: true });
+
+  /* =============================================
+     MAP NAVIGATION OPTIONS
+  ============================================= */
+  function openMapOptions() {
+    document.getElementById('mapNavOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMapOptions() {
+    document.getElementById('mapNavOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* =============================================
+     EVENT MODAL — data & functions
+  ============================================= */
+  const events = {
+    1: {
+      icon: 'fa-solid fa-church',
+      gradient: 'linear-gradient(135deg, #7A3B12 0%, #5C2D0A 100%)',
+      tagEs: 'Servicio',
+      tagEn: 'Service',
+      titleEs: 'Servicio Dominical',
+      titleEn: 'Sunday Service',
+      dateEs: 'Domingo 2 de marzo, 2025',
+      dateEn: 'Sunday, March 2, 2025',
+      timeEs: '10:00 AM – 12:00 PM',
+      timeEn: '10:00 AM – 12:00 PM',
+      location: 'Pilas, Costa Rica',
+      freqEs: 'Cada domingo',
+      freqEn: 'Every Sunday',
+      descEs: [
+        'Nuestro Servicio Dominical es el corazón de la vida de la iglesia. Cada semana nos reunimos como familia para adorar a Dios, recibir Su Palabra y fortalecernos unos a otros en la fe.',
+        'El servicio incluye alabanza y adoración en vivo, predicación bíblica expositiva y un tiempo de oración ministerial al final para quienes deseen recibir oración personal.'
+      ],
+      descEn: [
+        'Our Sunday Service is the heart of church life. Each week we gather as a family to worship God, receive His Word, and strengthen one another in faith.',
+        'The service includes live praise and worship, expository biblical preaching, and a ministry prayer time at the end for those who wish to receive personal prayer.'
+      ],
+      expectTitleEs: '¿Qué puedes esperar?',
+      expectTitleEn: 'What can you expect?',
+      expectEs: [
+        'Alabanza y adoración con un equipo de música en vivo',
+        'Predicación bíblica profunda y práctica',
+        'Ambiente cálido y acogedor para toda la familia',
+        'Tiempo de oración e intercesión ministerial',
+        'Comunidad y compañerismo después del servicio'
+      ],
+      expectEn: [
+        'Praise and worship with a live music team',
+        'Deep and practical biblical preaching',
+        'Warm, welcoming atmosphere for the whole family',
+        'Prayer and ministerial intercession time',
+        'Community and fellowship after the service'
+      ],
+      ctaEs: 'Contáctanos para más información',
+      ctaEn: 'Contact us for more information'
+    },
+    2: {
+      icon: 'fa-solid fa-hands-praying',
+      gradient: 'linear-gradient(135deg, #5C2D0A 0%, #3B1A06 100%)',
+      tagEs: 'Oración',
+      tagEn: 'Prayer',
+      titleEs: 'Reunión de Oración',
+      titleEn: 'Prayer Meeting',
+      dateEs: 'Miércoles 5 de marzo, 2025',
+      dateEn: 'Wednesday, March 5, 2025',
+      timeEs: '7:00 PM – 9:00 PM',
+      timeEn: '7:00 PM – 9:00 PM',
+      location: 'Pilas, Costa Rica',
+      freqEs: 'Cada miércoles',
+      freqEn: 'Every Wednesday',
+      descEs: [
+        'La Reunión de Oración es uno de los pilares más importantes de nuestra iglesia. Creemos que nada grande se logra sin la oración, y por eso nos reunimos cada semana para buscar juntos el rostro de Dios.',
+        'Es un espacio íntimo y poderoso donde la iglesia intercede por las familias, la comunidad, las naciones y los propósitos de Dios para esta generación. No es necesaria experiencia previa; solo un corazón dispuesto.'
+      ],
+      descEn: [
+        'The Prayer Meeting is one of the most important pillars of our church. We believe nothing great is accomplished without prayer, and so we gather each week to seek the face of God together.',
+        'It is an intimate and powerful space where the church intercedes for families, the community, the nations, and God\'s purposes for this generation. No prior experience is needed — just a willing heart.'
+      ],
+      expectTitleEs: '¿Qué puedes esperar?',
+      expectTitleEn: 'What can you expect?',
+      expectEs: [
+        'Adoración íntima y soaking en la presencia de Dios',
+        'Intercesión guiada por la iglesia y las naciones',
+        'Oración personal y en grupos pequeños',
+        'Testimonios y compartir lo que Dios está haciendo',
+        'Una atmosfera de rendición y encuentro con el Espíritu Santo'
+      ],
+      expectEn: [
+        'Intimate worship and soaking in God\'s presence',
+        'Guided intercession for the church and the nations',
+        'Personal prayer and small group prayer',
+        'Testimonies and sharing what God is doing',
+        'An atmosphere of surrender and encounter with the Holy Spirit'
+      ],
+      ctaEs: 'Contáctanos para más información',
+      ctaEn: 'Contact us for more information'
+    },
+    3: {
+      icon: 'fa-solid fa-music',
+      gradient: 'linear-gradient(135deg, #C08040 0%, #8B5728 100%)',
+      tagEs: 'Especial',
+      tagEn: 'Special',
+      titleEs: 'Noche de Adoración',
+      titleEn: 'Night of Worship',
+      dateEs: 'Sábado 15 de marzo, 2025',
+      dateEn: 'Saturday, March 15, 2025',
+      timeEs: '6:00 PM – 9:30 PM',
+      timeEn: '6:00 PM – 9:30 PM',
+      location: 'Pilas, Costa Rica',
+      freqEs: 'Evento especial',
+      freqEn: 'Special event',
+      descEs: [
+        'La Noche de Adoración es uno de los eventos más especiales del año en Unción con Gloria. Es una noche completamente dedicada a la alabanza y la adoración al Señor, donde el tiempo se detiene y nuestra única prioridad es Su presencia.',
+        'No hay agenda aparte de adorar. El equipo de música llevará a la congregación en un viaje de adoración profunda, con canciones en español e inglés, momentos de adoración espontánea y espacios para que el Espíritu Santo se mueva libremente.'
+      ],
+      descEn: [
+        'The Night of Worship is one of the most special events of the year at Unción con Gloria. It is an evening completely dedicated to praise and worship of the Lord, where time stands still and our only priority is His presence.',
+        'There is no agenda apart from worshipping. The music team will lead the congregation on a journey of deep worship, with songs in Spanish and English, moments of spontaneous worship, and spaces for the Holy Spirit to move freely.'
+      ],
+      expectTitleEs: '¿Qué puedes esperar?',
+      expectTitleEn: 'What can you expect?',
+      expectEs: [
+        'Más de 3 horas de adoración ininterrumpida',
+        'Música en vivo en español e inglés',
+        'Momentos de adoración espontánea y profética',
+        'Tiempo de ministración y oración al final',
+        'Una experiencia transformadora en la presencia de Dios'
+      ],
+      expectEn: [
+        'More than 3 hours of uninterrupted worship',
+        'Live music in Spanish and English',
+        'Moments of spontaneous and prophetic worship',
+        'Ministry and prayer time at the end',
+        'A life-changing experience in the presence of God'
+      ],
+      ctaEs: 'Contáctanos para más información',
+      ctaEn: 'Contact us for more information'
+    }
+  };
+
+  function openEventModal(id) {
+    const e = events[id];
+    if (!e) return;
+    const lang = document.documentElement.getAttribute('data-lang') || 'es';
+    const isEs = lang === 'es';
+
+    // Header
+    document.getElementById('eventModalHeader').style.background = e.gradient;
+    document.getElementById('eventModalIcon').className = e.icon;
+    document.getElementById('eventModalTag').textContent = isEs ? e.tagEs : e.tagEn;
+
+    // Title
+    document.getElementById('eventModalTitle').textContent = isEs ? e.titleEs : e.titleEn;
+
+    // Schedule labels (bilingual)
+    document.getElementById('eventModalDateLabel').textContent     = isEs ? 'Fecha'      : 'Date';
+    document.getElementById('eventModalTimeLabel').textContent     = isEs ? 'Hora'       : 'Time';
+    document.getElementById('eventModalLocationLabel').textContent = isEs ? 'Lugar'      : 'Location';
+    document.getElementById('eventModalFreqLabel').textContent     = isEs ? 'Frecuencia' : 'Frequency';
+
+    // Schedule values
+    document.getElementById('eventModalDate').textContent     = isEs ? e.dateEs : e.dateEn;
+    document.getElementById('eventModalTime').textContent     = e.timeEs; // same both langs
+    document.getElementById('eventModalLocation').textContent = e.location;
+    document.getElementById('eventModalFreq').textContent     = isEs ? e.freqEs : e.freqEn;
+
+    // Description
+    const desc = isEs ? e.descEs : e.descEn;
+    document.getElementById('eventModalDesc').innerHTML = desc.map(p => `<p>${p}</p>`).join('');
+
+    // What to expect
+    document.getElementById('eventModalExpectTitle').textContent = isEs ? e.expectTitleEs : e.expectTitleEn;
+    const items = isEs ? e.expectEs : e.expectEn;
+    document.getElementById('eventModalExpectList').innerHTML = items.map(i => `<li>${i}</li>`).join('');
+
+    // CTA
+    document.getElementById('eventModalCta').textContent = isEs ? e.ctaEs : e.ctaEn;
+
+    // Open
+    document.getElementById('eventModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeEventModal() {
+    document.getElementById('eventModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* =============================================
+     DEVOTIONAL MODAL — data & functions
+  ============================================= */
+  const devotionals = {
+    1: {
+      icon: 'fa-solid fa-book-open',
+      gradient: 'linear-gradient(135deg, #8B5728 0%, #5C2D0A 100%)',
+      categoryEs: 'Fe',
+      categoryEn: 'Faith',
+      dateEs: '24 de febrero de 2025',
+      dateEn: 'February 24, 2025',
+      titleEs: 'Permanecer en la Vid',
+      titleEn: 'Abiding in the Vine',
+      verseEs: '"Permaneced en mí, y yo en vosotros. Como el pámpano no puede llevar fruto por sí mismo, si no permanece en la vid, así tampoco vosotros, si no permanecéis en mí."',
+      verseEn: '"Abide in me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in me."',
+      verseRef: 'Juan / John 15:4',
+      contentEs: [
+        'Jesús nos llama a permanecer en Él como ramas que dependen de la vid para dar fruto. Esta permanencia no es pasiva, sino una decisión diaria de elegir a Cristo por encima de todo lo demás.',
+        'En el mundo de hoy, lleno de ruido y distracciones, la invitación a permanecer suena casi contracultural. Sin embargo, es en esa quietud conectada a la Fuente donde encontramos la verdadera vida. La rama separada de la vid puede verse verde por un tiempo, pero tarde o temprano se seca. De igual manera, una vida desconectada de Cristo puede mantener las formas externas de la fe, pero carece del flujo vital del Espíritu.',
+        'Permanecer en Cristo implica pasar tiempo en Su Palabra, hablar con Él a través de la oración, y elegir Su voluntad por encima de la nuestra en cada decisión cotidiana. Es un estilo de vida, no un momento puntual.',
+        'Hoy te invitamos a hacer una pausa. ¿Estás conectado a la vid? ¿Fluye en tu vida la savia del Espíritu Santo? Si sientes que algo falta, regresa a lo básico: abre tu Biblia, arrodíllate en oración, y deja que Jesús sea nuevamente el centro de todo.',
+        'La promesa es clara: quien permanece en Él, da mucho fruto. No fruto de esfuerzo propio, sino el fruto natural de una vida rendida a la presencia de Cristo.'
+      ],
+      contentEn: [
+        'Jesus calls us to remain in Him as branches depend on the vine to bear fruit. This abiding is not passive, but a daily decision to choose Christ above everything else.',
+        'In today\'s world, full of noise and distractions, the invitation to abide sounds almost countercultural. Yet it is in that stillness, connected to the Source, where we find true life. A branch separated from the vine may look green for a time, but sooner or later it withers. In the same way, a life disconnected from Christ can maintain the outward forms of faith, but lacks the vital flow of the Spirit.',
+        'Abiding in Christ means spending time in His Word, speaking with Him through prayer, and choosing His will above our own in every daily decision. It is a lifestyle, not a single moment.',
+        'Today we invite you to pause. Are you connected to the vine? Does the sap of the Holy Spirit flow through your life? If you feel something is missing, return to the basics: open your Bible, kneel in prayer, and let Jesus once again be the center of everything.',
+        'The promise is clear: whoever abides in Him bears much fruit. Not fruit of one\'s own effort, but the natural fruit of a life surrendered to the presence of Christ.'
+      ]
+    },
+    2: {
+      icon: 'fa-solid fa-hands-praying',
+      gradient: 'linear-gradient(135deg, #C08040 0%, #8B5728 100%)',
+      categoryEs: 'Oración',
+      categoryEn: 'Prayer',
+      dateEs: '17 de febrero de 2025',
+      dateEn: 'February 17, 2025',
+      titleEs: 'El Poder de la Oración Persistente',
+      titleEn: 'The Power of Persistent Prayer',
+      verseEs: '"Pedid, y se os dará; buscad, y hallaréis; llamad, y se os abrirá. Porque todo aquel que pide, recibe; y el que busca, halla; y al que llama, se le abrirá."',
+      verseEn: '"Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and the one who seeks finds, and to the one who knocks it will be opened."',
+      verseRef: 'Mateo / Matthew 7:7-8',
+      contentEs: [
+        'La oración no es un último recurso, es nuestra primera respuesta. Dios nos invita a buscar su rostro con persistencia y confianza absoluta en su fidelidad. La oración persistente no nace de la duda, sino de la fe que sabe que Dios escucha y actúa en el tiempo perfecto.',
+        'Jesús mismo nos enseñó con la parábola del juez injusto que debemos orar siempre y no desfallecer (Lucas 18:1). La persistencia en la oración no es intentar convencer a Dios de algo que no quiere hacer; es alinearnos con Su corazón hasta ver Su voluntad manifestarse en nuestra realidad.',
+        'Muchas veces oramos una vez y, si no vemos resultados inmediatos, abandonamos. Pero la oración persistente es como la lluvia sobre la tierra árida: puede no notarse al principio, pero poco a poco va penetrando hasta llegar a las raíces.',
+        'La historia de la iglesia está llena de testimonios de personas que oraron durante años por lo que parecía imposible, y vieron a Dios moverse de maneras extraordinarias. La oración no cambia a Dios; nos cambia a nosotros, y a través de nosotros, cambia el entorno.',
+        'Te animamos a tomar un área de tu vida —una situación, una persona, un sueño— y comprometerte a orar por ella durante los próximos 30 días sin rendirte. Descubrirás que la oración persistente transforma tanto lo que pedimos como el corazón desde el que pedimos.'
+      ],
+      contentEn: [
+        'Prayer is not a last resort, it is our first response. God invites us to seek His face with persistence and absolute trust in His faithfulness. Persistent prayer does not arise from doubt, but from faith that knows God listens and acts at the perfect time.',
+        'Jesus Himself taught us through the parable of the unjust judge that we should always pray and not give up (Luke 18:1). Persistence in prayer is not trying to convince God of something He doesn\'t want to do; it is aligning ourselves with His heart until we see His will manifested in our reality.',
+        'Many times we pray once and, if we don\'t see immediate results, we give up. But persistent prayer is like rain on arid ground: it may not be noticeable at first, but it gradually penetrates until it reaches the roots.',
+        'Church history is full of testimonies of people who prayed for years for what seemed impossible, and saw God move in extraordinary ways. Prayer doesn\'t change God; it changes us, and through us, it changes our surroundings.',
+        'We encourage you to take one area of your life — a situation, a person, a dream — and commit to praying for it for the next 30 days without giving up. You will discover that persistent prayer transforms both what we ask for and the heart from which we ask.'
+      ]
+    },
+    3: {
+      icon: 'fa-solid fa-cross',
+      gradient: 'linear-gradient(135deg, #D4956A 0%, #8B5728 100%)',
+      categoryEs: 'Gracia',
+      categoryEn: 'Grace',
+      dateEs: '10 de febrero de 2025',
+      dateEn: 'February 10, 2025',
+      titleEs: 'La Gracia que Todo lo Transforma',
+      titleEn: 'The Grace that Transforms Everything',
+      verseEs: '"Porque por gracia sois salvos por medio de la fe; y esto no de vosotros, pues es don de Dios; no por obras, para que nadie se gloríe."',
+      verseEn: '"For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast."',
+      verseRef: 'Efesios / Ephesians 2:8-9',
+      contentEs: [
+        'La gracia de Dios no solo perdona, sino que transforma. Cuando comprendemos la profundidad de su amor, nuestra vida se convierte en un testimonio vivo de lo que Él puede hacer con un corazón rendido.',
+        'La gracia es, quizás, el concepto más radical del Evangelio. En un mundo que paga lo que merece, Dios ofrece lo que no merecemos. No porque seamos buenos, sino porque Él es bueno. No porque lo hayamos ganado, sino porque Su amor es más grande que nuestra deuda.',
+        'Muchos creyentes viven bajo un peso de deuda espiritual que Cristo ya pagó. Siguen intentando ganarse lo que ya les fue dado gratuitamente. La gracia nos libera de esa trampa: ya no trabajamos para ser aceptados; trabajamos porque ya somos aceptados.',
+        'Esta gracia no es licencia para pecar, sino poder para no pecar. Cuando realmente comprendemos cuánto se nos ha perdonado, nuestra respuesta natural es el amor, la obediencia y el deseo de honrar a Quien nos lo dio todo.',
+        'Hoy, si cargas con culpa del pasado, si sientes que no eres suficiente o que fallaste demasiado, recibe esta verdad: la gracia de Dios es mayor que tu error más grande. Levanta la vista, recibe Su perdón, y camina en la libertad que solo Cristo puede dar.'
+      ],
+      contentEn: [
+        'God\'s grace doesn\'t just forgive, it transforms. When we understand the depth of His love, our life becomes a living testimony of what He can do with a surrendered heart.',
+        'Grace is perhaps the most radical concept of the Gospel. In a world that pays what it deserves, God offers what we do not deserve. Not because we are good, but because He is good. Not because we have earned it, but because His love is greater than our debt.',
+        'Many believers live under a weight of spiritual debt that Christ already paid. They keep trying to earn what was already given to them freely. Grace frees us from that trap: we no longer work to be accepted; we work because we are already accepted.',
+        'This grace is not a license to sin, but power not to sin. When we truly understand how much we have been forgiven, our natural response is love, obedience, and the desire to honor the One who gave us everything.',
+        'Today, if you carry guilt from the past, if you feel you are not enough or that you have failed too much, receive this truth: God\'s grace is greater than your greatest mistake. Look up, receive His forgiveness, and walk in the freedom that only Christ can give.'
+      ]
+    }
+  };
+
+  function openDevoModal(id) {
+    const d = devotionals[id];
+    if (!d) return;
+    const lang = document.documentElement.getAttribute('data-lang') || 'es';
+
+    // Header
+    const header = document.getElementById('devoModalHeader');
+    header.style.background = d.gradient;
+    document.getElementById('devoModalIcon').className = d.icon;
+    document.getElementById('devoModalCategory').textContent = lang === 'es' ? d.categoryEs : d.categoryEn;
+
+    // Meta
+    document.getElementById('devoModalDate').textContent = lang === 'es' ? d.dateEs : d.dateEn;
+
+    // Title
+    document.getElementById('devoModalTitle').textContent = lang === 'es' ? d.titleEs : d.titleEn;
+
+    // Verse
+    document.getElementById('devoModalVerseText').textContent = lang === 'es' ? d.verseEs : d.verseEn;
+    document.getElementById('devoModalVerseRef').textContent = d.verseRef;
+
+    // Full content paragraphs
+    const content = lang === 'es' ? d.contentEs : d.contentEn;
+    document.getElementById('devoModalText').innerHTML = content.map(p => `<p>${p}</p>`).join('');
+
+    // Open modal
+    document.getElementById('devoModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDevoModal() {
+    document.getElementById('devoModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Smooth reveal on scroll (Intersection Observer)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.value-card, .event-card, .devo-card, .mv-card, .gallery-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

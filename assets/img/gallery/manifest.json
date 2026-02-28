@@ -1,0 +1,223 @@
+{
+    "categories":  [
+                       {
+                           "id":  "adoracion",
+                           "icon":  "fa-solid fa-hands-praying",
+                           "bg":  "linear-gradient(135deg, #3a1b05 0%, #8B5728 60%, #C08040 100%)",
+                           "titleEs":  "Servicio de adoracion",
+                           "titleEn":  "Worship service",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/adoracion/Imagen1.jpeg",
+                                              "captionEs":  "Servicio de adoracion",
+                                              "captionEn":  "Worship service"
+                                          }
+                                      ]
+                       },
+                       {
+                           "id":  "comunidad",
+                           "icon":  "fa-solid fa-people-group",
+                           "bg":  "linear-gradient(135deg, #5C2D0A 0%, #8B5728 100%)",
+                           "titleEs":  "Comunidad",
+                           "titleEn":  "Community",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen10.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen15.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen17.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen5.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen6.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/Imagen7.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.05.59 PM (1).jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.05.59 PM (2).jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.05.59 PM.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.06.00 PM (4).jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.06.00 PM (5).jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/comunidad/WhatsApp Image 2026-02-27 at 6.24.06 PM.jpeg",
+                                              "captionEs":  "Comunidad",
+                                              "captionEn":  "Community"
+                                          }
+                                      ]
+                       },
+                       {
+                           "id":  "templo",
+                           "icon":  "fa-solid fa-church",
+                           "bg":  "linear-gradient(135deg, #8B5728 0%, #D4956A 100%)",
+                           "titleEs":  "Nuestro templo",
+                           "titleEn":  "Our sanctuary",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/templo/Imagen18.jpeg",
+                                              "captionEs":  "Nuestro templo",
+                                              "captionEn":  "Our sanctuary"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/templo/Imagen2.jpeg",
+                                              "captionEs":  "Nuestro templo",
+                                              "captionEn":  "Our sanctuary"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/templo/Imagen3.jpeg",
+                                              "captionEs":  "Nuestro templo",
+                                              "captionEn":  "Our sanctuary"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/templo/WhatsApp Image 2026-02-27 at 6.05.58 PM (1).jpeg",
+                                              "captionEs":  "Nuestro templo",
+                                              "captionEn":  "Our sanctuary"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/templo/WhatsApp Image 2026-02-27 at 6.05.58 PM.jpeg",
+                                              "captionEs":  "Nuestro templo",
+                                              "captionEn":  "Our sanctuary"
+                                          }
+                                      ]
+                       },
+                       {
+                           "id":  "jovenes",
+                           "icon":  "fa-solid fa-people-group",
+                           "bg":  "linear-gradient(135deg, #C08040 0%, #5C2D0A 100%)",
+                           "titleEs":  "Ministerio de jovenes",
+                           "titleEn":  "Youth ministry",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/jovenes/WhatsApp Image 2026-02-27 at 6.05.59 PM (4).jpeg",
+                                              "captionEs":  "Ministerio de jovenes",
+                                              "captionEn":  "Youth ministry"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/jovenes/WhatsApp Image 2026-02-27 at 6.06.00 PM (1).jpeg",
+                                              "captionEs":  "Ministerio de jovenes",
+                                              "captionEn":  "Youth ministry"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/jovenes/WhatsApp Image 2026-02-27 at 6.06.00 PM (2).jpeg",
+                                              "captionEs":  "Ministerio de jovenes",
+                                              "captionEn":  "Youth ministry"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/jovenes/WhatsApp Image 2026-02-27 at 6.06.00 PM (3).jpeg",
+                                              "captionEs":  "Ministerio de jovenes",
+                                              "captionEn":  "Youth ministry"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/jovenes/WhatsApp Image 2026-02-27 at 6.06.00 PM.jpeg",
+                                              "captionEs":  "Ministerio de jovenes",
+                                              "captionEn":  "Youth ministry"
+                                          }
+                                      ]
+                       },
+                       {
+                           "id":  "bautismos",
+                           "icon":  "fa-solid fa-droplet",
+                           "bg":  "linear-gradient(135deg, #D4956A 0%, #8B5728 100%)",
+                           "titleEs":  "Bautismos",
+                           "titleEn":  "Baptisms",
+                           "images":  [
+
+                                      ]
+                       },
+                       {
+                           "id":  "oracion",
+                           "icon":  "fa-solid fa-fire",
+                           "bg":  "linear-gradient(135deg, #5C2D0A 0%, #C08040 100%)",
+                           "titleEs":  "Oracion e intercesion",
+                           "titleEn":  "Prayer \u0026 intercession",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/oracion/Imagen16.jpeg",
+                                              "captionEs":  "Oracion e intercesion",
+                                              "captionEn":  "Prayer \u0026 intercession"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/oracion/Imagen8.jpeg",
+                                              "captionEs":  "Oracion e intercesion",
+                                              "captionEn":  "Prayer \u0026 intercession"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/oracion/Imagen9.png",
+                                              "captionEs":  "Oracion e intercesion",
+                                              "captionEn":  "Prayer \u0026 intercession"
+                                          }
+                                      ]
+                       },
+                       {
+                           "id":  "finca",
+                           "icon":  "fa-solid fa-tree",
+                           "bg":  "linear-gradient(135deg, #8B5728 0%, #5C2D0A 100%)",
+                           "titleEs":  "Finca de la iglesia",
+                           "titleEn":  "Church grounds",
+                           "images":  [
+                                          {
+                                              "src":  "assets/img/gallery/finca/Imagen11.jpeg",
+                                              "captionEs":  "Finca de la iglesia",
+                                              "captionEn":  "Church grounds"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/finca/Imagen12.png",
+                                              "captionEs":  "Finca de la iglesia",
+                                              "captionEn":  "Church grounds"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/finca/Imagen13.png",
+                                              "captionEs":  "Finca de la iglesia",
+                                              "captionEn":  "Church grounds"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/finca/Imagen14.png",
+                                              "captionEs":  "Finca de la iglesia",
+                                              "captionEn":  "Church grounds"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/finca/Imagen4.jpeg",
+                                              "captionEs":  "Finca de la iglesia",
+                                              "captionEn":  "Church grounds"
+                                          }
+                                      ]
+                       }
+                   ]
+}
