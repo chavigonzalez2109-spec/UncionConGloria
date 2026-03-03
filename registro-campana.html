@@ -63,7 +63,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    transition: opacity 0.2s;
   }
+  .topbar-brand:hover { opacity: 0.82; }
   .topbar-logo {
     width: 36px; height: 36px;
     border-radius: 50%;
@@ -789,13 +792,14 @@
 
   <!-- ── Sticky topbar ─────────────────────────── -->
   <nav class="topbar">
-    <div class="topbar-brand">
+    <a href="https://uncioncongloria.com" target="_blank" rel="noopener" class="topbar-brand"
+       title="Ir al sitio principal">
       <img src="assets/img/logo-cream.jpg" alt="Unción con Gloria" class="topbar-logo" />
       <div class="topbar-name">
         Unción con Gloria
-        <span>Iglesia Bíblica</span>
+        <span>↗ Sitio principal</span>
       </div>
-    </div>
+    </a>
     <a href="#registro" class="topbar-cta">
       <i class="fa-solid fa-id-card"></i> Regístrate
     </a>
@@ -1055,23 +1059,68 @@
 
   <script>
     /* ─────────────────────────────────────────────
-       REGISTRO — localStorage
+       CONFIGURACIÓN
     ───────────────────────────────────────────── */
     const STORAGE_KEY = 'ucg_campana_evangelistica_2026';
 
-    function actualizarContador() {
-      const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    /**
+     * GOOGLE SHEETS — Pasos para activar:
+     *  1. Abrí Google Sheets → Extensiones → Apps Script
+     *  2. Pegá el código del archivo "apps-script.gs" (ver instrucciones del dev)
+     *  3. Guardá, hacé clic en "Implementar" → "Nueva implementación"
+     *     Tipo: Aplicación web | Ejecutar como: Yo | Acceso: Cualquier usuario
+     *  4. Copiá la URL que te da Google y pegala aquí abajo (reemplazá el texto)
+     */
+    const SHEETS_URL = 'PEGAR_URL_DE_APPS_SCRIPT_AQUI';
+
+    /* ─────────────────────────────────────────────
+       GOOGLE SHEETS — helpers
+    ───────────────────────────────────────────── */
+    /** Envía un registro a Google Sheets (fire-and-forget, no bloquea). */
+    function enviarASheets(payload) {
+      if (!SHEETS_URL || SHEETS_URL.startsWith('PEGAR')) return;
+      try {
+        fetch(SHEETS_URL, {
+          method: 'POST',
+          mode:   'no-cors',                           // Evita problemas CORS con Apps Script
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+      } catch { /* silencioso — localStorage ya guardó el dato */ }
+    }
+
+    /** Obtiene el total global de registros desde Google Sheets. */
+    async function obtenerTotalGlobal() {
+      if (!SHEETS_URL || SHEETS_URL.startsWith('PEGAR')) return null;
+      try {
+        const res  = await fetch(SHEETS_URL + '?action=total');
+        const data = await res.json();
+        return (data.status === 'ok' && data.total >= 0) ? data.total : null;
+      } catch { return null; }
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTADOR (global si Sheets está activo, local si no)
+    ───────────────────────────────────────────── */
+    async function actualizarContador() {
       const el  = document.getElementById('regCounter');
       const txt = document.getElementById('counterText');
-      if (registros.length > 0) {
-        txt.textContent = `${registros.length} persona${registros.length !== 1 ? 's' : ''} registrada${registros.length !== 1 ? 's' : ''}`;
+
+      const globalTotal = await obtenerTotalGlobal();
+      const total = globalTotal ?? JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]').length;
+
+      if (total > 0) {
+        txt.textContent = `${total} persona${total !== 1 ? 's' : ''} registrada${total !== 1 ? 's' : ''}`;
         el.style.display = 'flex';
       } else {
         el.style.display = 'none';
       }
     }
 
-    function submitRegistro(e) {
+    /* ─────────────────────────────────────────────
+       SUBMIT
+    ───────────────────────────────────────────── */
+    async function submitRegistro(e) {
       e.preventDefault();
       const nombre  = document.getElementById('rNombre').value.trim();
       const celular = document.getElementById('rCelular').value.trim();
@@ -1083,7 +1132,6 @@
       }
 
       const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-
       if (registros.find(r => r.celular === celular)) {
         mostrarMsg('Este número de celular ya está registrado. ¡Gracias!', 'dup');
         return;
@@ -1092,32 +1140,40 @@
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp;Registrando…';
 
-      setTimeout(() => {
-        const ahora = new Date();
-        registros.push({
-          nombre,
-          celular,
-          fecha: ahora.toLocaleDateString('es-CR'),
-          hora:  ahora.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit' })
-        });
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(registros));
+      // Pequeño delay para sensación de proceso
+      await new Promise(r => setTimeout(r, 500));
 
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Registrarme!';
-        document.getElementById('rNombre').value  = '';
-        document.getElementById('rCelular').value = '';
+      const ahora   = new Date();
+      const entrada = {
+        nombre,
+        celular,
+        fecha: ahora.toLocaleDateString('es-CR'),
+        hora:  ahora.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit' })
+      };
 
-        document.getElementById('successName').textContent = `¡Bienvenido/a, ${nombre}!`;
-        document.getElementById('formWrap').style.display    = 'none';
-        document.getElementById('successScreen').style.display = 'flex';
-        actualizarContador();
-      }, 700);
+      // 1. Guardar en localStorage (funciona siempre, sin internet)
+      registros.push(entrada);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(registros));
+
+      // 2. Enviar a Google Sheets (si está configurado)
+      enviarASheets(entrada);
+
+      // Mostrar éxito
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Registrarme!';
+      document.getElementById('rNombre').value  = '';
+      document.getElementById('rCelular').value = '';
+      document.getElementById('successName').textContent = `¡Bienvenido/a, ${nombre}!`;
+      document.getElementById('formWrap').style.display    = 'none';
+      document.getElementById('successScreen').style.display = 'flex';
+
+      actualizarContador();
     }
 
     function mostrarMsg(texto, tipo) {
       const el = document.getElementById('formMsg');
-      el.textContent  = texto;
-      el.className    = `form-msg form-msg--${tipo}`;
+      el.textContent   = texto;
+      el.className     = `form-msg form-msg--${tipo}`;
       el.style.display = 'block';
       setTimeout(() => { el.style.display = 'none'; }, 4500);
     }
@@ -1127,6 +1183,7 @@
       document.getElementById('formWrap').style.display      = 'block';
     }
 
+    // Cargar contador al abrir la página
     actualizarContador();
 
     /* ─────────────────────────────────────────────
