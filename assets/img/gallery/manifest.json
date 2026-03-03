@@ -226,7 +226,41 @@
                            "titleEs":  "Ayunos congregacionales",
                            "titleEn":  "Congregational fasts",
                            "images":  [
-
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/001.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/002.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/003.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/004.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/005.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/006.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          },
+                                          {
+                                              "src":  "assets/img/gallery/ayunos/007.jpeg",
+                                              "captionEs":  "Ayunos congregacionales",
+                                              "captionEn":  "Congregational fasts"
+                                          }
                                       ]
                        }
                    ]
