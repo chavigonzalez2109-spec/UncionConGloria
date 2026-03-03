@@ -67,6 +67,12 @@ $CategoryDefs = [ordered]@{
         titleEs = "Finca de la iglesia"
         titleEn = "Church grounds"
     }
+    "ayunos" = @{
+        icon    = "fa-solid fa-person-praying"
+        bg      = "linear-gradient(135deg, #1A0802 0%, #4A1E0A 100%)"
+        titleEs = "Ayunos congregacionales"
+        titleEn = "Congregational fasts"
+    }
 }
 
 $ImageExtensions = @(".jpg", ".jpeg", ".png", ".webp", ".gif")

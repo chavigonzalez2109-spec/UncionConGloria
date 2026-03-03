@@ -673,6 +673,7 @@
     .event-img--sunday  { background: linear-gradient(135deg, #7A3B12 0%, #5C2D0A 100%); }
     .event-img--prayer  { background: linear-gradient(135deg, #5C2D0A 0%, #3B1A06 100%); }
     .event-img--evangelism { background: linear-gradient(135deg, #8B1A1A 0%, #C04A1A 100%); }
+    .event-img--fasting { background: linear-gradient(135deg, #1A0802 0%, #4A1E0A 100%); }
 
     /* Card icon block — large icon + label inside event/devo image area */
     .card-icon-block {
@@ -1828,6 +1829,86 @@
     }
 
     /* ============================================
+       "YO ESTUVE AQUÍ" — Registro de asistencia
+    ============================================ */
+    .evento-registro {
+      margin-top: 32px;
+      border-top: 2px solid var(--color-cream);
+      padding-top: 24px;
+    }
+    .evento-registro-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .evento-registro-header i {
+      font-size: 22px;
+      color: var(--color-copper);
+    }
+    .evento-registro-header h4 {
+      font-size: 18px;
+      color: var(--color-dark-brown);
+      margin: 0;
+    }
+    .evento-registro-sub {
+      font-size: 13px;
+      color: var(--color-mid-brown);
+      margin-bottom: 20px;
+    }
+    .registro-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 560px) { .registro-fields { grid-template-columns: 1fr; } }
+    .registro-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 6px;
+    }
+    .registro-field input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #D4956A55;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--color-dark-brown);
+      background: var(--color-cream);
+      transition: var(--transition);
+      outline: none;
+    }
+    .registro-field input:focus {
+      border-color: var(--color-copper);
+      background: #fff;
+    }
+    .registro-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .registro-msg {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+    }
+    .registro-msg--ok  { background: #e8f5e9; color: #2e7d32; }
+    .registro-msg--dup { background: #fff3e0; color: #e65100; }
+    .registro-stats {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--color-mid-brown);
+      font-weight: 600;
+    }
+    /* ============================================
        LOGO IMAGES — estilos para imágenes reales
     ============================================ */
 
@@ -1888,7 +1969,24 @@
     .mt-16 { margin-top: 16px; }
     .mt-32 { margin-top: 32px; }
     .mt-48 { margin-top: 48px; }
+
+    /* ============================================
+       CONTACT FORM — estados de envío
+    ============================================ */
+    .contact-form-msg {
+      margin-top: 14px;
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .contact-form-msg--ok  { background: #e8f5e9; color: #2e7d32; }
+    .contact-form-msg--err { background: #ffebee; color: #c62828; }
+    .btn:disabled { opacity: 0.65; cursor: not-allowed; pointer-events: none; }
   </style>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -1960,8 +2058,8 @@
       <div class="hero-inner">
         <div class="hero-badge">
           <svg width="14" height="14" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#D4956A" stroke-width="8"/></svg>
-          <span class="es-only">Fundada en 1999 · Pilas, Costa Rica</span>
-          <span class="en-only">Founded in 1999 · Pilas, Costa Rica</span>
+          <span class="es-only">Fundada en 1999 · Tacares, Costa Rica</span>
+          <span class="en-only">Founded in 1999 · Tacares, Costa Rica</span>
         </div>
 
         <h1 class="hero-title">
@@ -2165,14 +2263,14 @@
           <span class="en-only">26 years carrying God's glory to the nations</span>
         </h2>
         <p class="es-only">
-          La iglesia nació el <strong>26 de octubre de 1999</strong>. Éramos un pequeño grupo que nos congregábamos en una casa en la comunidad de Pilas. De esta forma empezamos a establecer la iglesia, donde fue muy difícil; luchamos contra muchas adversidades y tuvimos varias propiedades.
+          La iglesia nació el <strong>26 de octubre de 1999</strong>. Éramos un pequeño grupo que nos congregábamos en una casa en la comunidad de Tacares. De esta forma empezamos a establecer la iglesia, donde fue muy difícil; luchamos contra muchas adversidades y tuvimos varias propiedades.
         </p>
         <p class="es-only">
           Después de 12 años, de una forma milagrosa, Dios nos dio una finca de dos hectáreas donde estamos establecidos. Logramos construir el templo y un proyecto glorioso para expandir el reino de Dios.
         </p>
         <p class="es-only"><em style="color: var(--color-copper);">Ha sido solo la mano de Dios. ¡Gloria a Dios!</em></p>
         <p class="en-only">
-          The church was born on <strong>October 26, 1999</strong>. We were a small group gathering in a home in the community of Pilas. From there, we began to establish the church — it was very difficult; we faced many adversities and moved through various properties.
+          The church was born on <strong>October 26, 1999</strong>. We were a small group gathering in a home in the community of Tacares. From there, we began to establish the church — it was very difficult; we faced many adversities and moved through various properties.
         </p>
         <p class="en-only">
           After 12 years, in a miraculous way, God gave us a two-hectare farm where we are now established. We were able to build the sanctuary and a glorious project to expand the kingdom of God.
@@ -2373,6 +2471,47 @@
               <span>Plaza de Deportes de Cataluña, Tacares de Grecia</span>
             </div>
             <a href="#" class="event-link" data-event="3" onclick="openEventModal(3);return false;">
+              <span class="es-only">Más info</span>
+              <span class="en-only">More info</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event-card">
+        <div class="event-img event-img--fasting">
+          <div class="card-icon-block">
+            <i class="fa-solid fa-person-praying"></i>
+            <span class="es-only">Ayuno Congregacional</span>
+            <span class="en-only">Congregational Fast</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-meta">
+            <div class="event-date">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span class="es-only">Sáb 7 Mar, 8:00 AM – 12:00 MD</span>
+              <span class="en-only">Sat Mar 7, 8:00 AM – 12:00 PM</span>
+            </div>
+            <span class="event-tag es-only">Mensual</span>
+            <span class="event-tag en-only">Monthly</span>
+          </div>
+          <h4>
+            <span class="es-only">Ayuno Congregacional</span>
+            <span class="en-only">Congregational Fast</span>
+          </h4>
+          <p>
+            <span class="es-only">El primer sábado de cada mes la congregación se une en ayuno y oración para buscar el rostro de Dios y clamar por avivamiento.</span>
+            <span class="en-only">On the first Saturday of each month the congregation joins in fasting and prayer to seek God's face and cry out for revival.</span>
+          </p>
+          <div class="event-footer">
+            <div class="event-location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Tacares de Grecia, Alajuela, Costa Rica</span>
+            </div>
+            <a href="#" class="event-link" data-event="4" onclick="openEventModal(4);return false;">
               <span class="es-only">Más info</span>
               <span class="en-only">More info</span>
               <i class="fa-solid fa-arrow-right"></i>
@@ -2596,6 +2735,15 @@
           <span class="gallery-caption en-only">Church grounds</span>
         </div>
       </div>
+      <div class="gallery-item" data-gallery-index="7" data-caption-es="Ayunos congregacionales" data-caption-en="Congregational fasts">
+        <div class="gallery-img" style="background: linear-gradient(135deg, #1A0802 0%, #4A1E0A 100%);">
+          <i class="fa-solid fa-person-praying"></i>
+        </div>
+        <div class="gallery-overlay">
+          <span class="gallery-caption es-only">Ayunos congregacionales</span>
+          <span class="gallery-caption en-only">Congregational fasts</span>
+        </div>
+      </div>
     </div>
 
     <!-- Carousel Lightbox -->
@@ -2648,14 +2796,14 @@
     </h4>
     <p class="map-nav-subtext">Iglesia Bíblica Unción con Gloria<br>Tacares de Grecia, Alajuela, Costa Rica</p>
     <div class="map-nav-options">
-      <a href="https://maps.app.goo.gl/xWGHhhXg3MVUgHu56"
+      <a href="https://maps.app.goo.gl/uBtXCzUoxRctDJKD6"
          target="_blank" rel="noopener noreferrer"
          class="map-nav-opt map-nav-gmaps"
          onclick="closeMapOptions()">
         <i class="fa-brands fa-google"></i>
         <span>Google Maps</span>
       </a>
-      <a href="https://waze.com/ul?ll=10.0283998,-84.2992437&navigate=yes"
+      <a href="https://waze.com/ul?ll=10.027679,-84.299979&navigate=yes"
          target="_blank" rel="noopener noreferrer"
          class="map-nav-opt map-nav-waze"
          onclick="closeMapOptions()">
@@ -2730,6 +2878,50 @@
         <i class="fa-solid fa-envelope"></i>
         <span id="eventModalCta"></span>
       </a>
+
+      <!-- "Yo estuve aquí" — solo visible en Campaña Evangelística (event 3) -->
+      <div class="evento-registro" id="eventoRegistro" style="display:none">
+        <div class="evento-registro-header">
+          <i class="fa-solid fa-id-card"></i>
+          <h4>
+            <span class="es-only">¡Yo estuve aquí!</span>
+            <span class="en-only">I Was Here!</span>
+          </h4>
+        </div>
+        <p class="evento-registro-sub">
+          <span class="es-only">Registra tu asistencia a este evento especial y sé parte de la historia.</span>
+          <span class="en-only">Register your attendance at this special event and be part of history.</span>
+        </p>
+        <form id="registroForm" onsubmit="submitRegistro(event)">
+          <div class="registro-fields">
+            <div class="registro-field">
+              <label>
+                <span class="es-only">Nombre completo</span>
+                <span class="en-only">Full name</span>
+              </label>
+              <input type="text" id="registroNombre" autocomplete="name" required
+                placeholder="Ej: Juan Pérez" />
+            </div>
+            <div class="registro-field">
+              <label>
+                <span class="es-only">Número de celular</span>
+                <span class="en-only">Cell phone number</span>
+              </label>
+              <input type="tel" id="registroCedula" autocomplete="tel" required
+                placeholder="Ej: 8888-8888" />
+            </div>
+          </div>
+          <div class="registro-actions">
+            <button type="submit" class="btn btn-primary" style="padding:10px 22px; font-size:14px;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span class="es-only">Registrarme</span>
+              <span class="en-only">Register me</span>
+            </button>
+            <span id="registroMsg" class="registro-msg" style="display:none"></span>
+          </div>
+        </form>
+        <div class="registro-stats" id="registroStats"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -2788,7 +2980,7 @@
         <div class="map-card">
           <div class="map-iframe-wrap">
             <iframe
-              src="https://maps.google.com/maps?q=10.0283998,-84.2992437&z=17&output=embed"
+              src="https://maps.google.com/maps?q=10.027679,-84.299979&z=17&output=embed&layer=satellite&t=k"
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
@@ -2846,47 +3038,61 @@
           <span class="es-only">Envíanos un mensaje</span>
           <span class="en-only">Send us a message</span>
         </h3>
-        <div class="form-grid-2">
+        <form id="contactForm" onsubmit="enviarContacto(event)" novalidate>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label>
+                <span class="es-only">Nombre</span>
+                <span class="en-only">Name</span>
+              </label>
+              <input type="text" id="contactNombre" name="from_name" required
+                data-ph-es="Tu nombre" data-ph-en="Your name"
+                placeholder="Tu nombre" />
+            </div>
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" id="contactEmail" name="reply_to" required
+                placeholder="tu@email.com" />
+            </div>
+          </div>
           <div class="form-row">
             <label>
-              <span class="es-only">Nombre</span>
-              <span class="en-only">Name</span>
+              <span class="es-only">Asunto</span>
+              <span class="en-only">Subject</span>
             </label>
-            <input type="text" placeholder="Tu nombre" class="es-only">
-            <input type="text" placeholder="Your name" class="en-only">
+            <select name="subject" id="contactAsunto">
+              <option value="Información general">
+                <span class="es-only">Información general</span>
+                <span class="en-only">General Information</span>
+              </option>
+              <option value="Solicitud de oración">
+                <span class="es-only">Solicitud de oración</span>
+                <span class="en-only">Prayer Request</span>
+              </option>
+              <option value="Visitar la iglesia">
+                <span class="es-only">Visitar la iglesia</span>
+                <span class="en-only">Visit the Church</span>
+              </option>
+            </select>
           </div>
           <div class="form-row">
-            <label>Email</label>
-            <input type="email" placeholder="tu@email.com">
+            <label>
+              <span class="es-only">Mensaje</span>
+              <span class="en-only">Message</span>
+            </label>
+            <textarea id="contactMensaje" name="message" rows="5" required
+              data-ph-es="Escribe tu mensaje aquí..."
+              data-ph-en="Write your message here..."
+              placeholder="Escribe tu mensaje aquí..."></textarea>
           </div>
-        </div>
-        <div class="form-row">
-          <label>
-            <span class="es-only">Asunto</span>
-            <span class="en-only">Subject</span>
-          </label>
-          <select>
-            <option class="es-only">Información general</option>
-            <option class="en-only">General Information</option>
-            <option class="es-only">Solicitud de oración</option>
-            <option class="en-only">Prayer Request</option>
-            <option class="es-only">Visitar la iglesia</option>
-            <option class="en-only">Visit the Church</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>
-            <span class="es-only">Mensaje</span>
-            <span class="en-only">Message</span>
-          </label>
-          <textarea placeholder="Escribe tu mensaje aquí..." class="es-only"></textarea>
-          <textarea placeholder="Write your message here..." class="en-only"></textarea>
-        </div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span class="es-only">Enviar Mensaje</span>
-          <span class="en-only">Send Message</span>
-        </button>
+          <button class="btn btn-primary" id="contactSubmitBtn"
+            style="width:100%;justify-content:center;" type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="es-only">Enviar Mensaje</span>
+            <span class="en-only">Send Message</span>
+          </button>
+          <div id="contactFormMsg" class="contact-form-msg" style="display:none"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -3012,6 +3218,10 @@
     document.title = lang === 'es'
       ? 'Unción con Gloria | Iglesia'
       : 'Unción con Gloria | Church';
+    // Actualizar placeholders bilingües del formulario
+    document.querySelectorAll('[data-ph-es], [data-ph-en]').forEach(el => {
+      el.placeholder = lang === 'es' ? el.dataset.phEs : el.dataset.phEn;
+    });
   }
 
   // Sticky nav scroll
@@ -3350,6 +3560,47 @@
       ],
       ctaEs: 'Contáctanos para más información',
       ctaEn: 'Contact us for more information'
+    },
+    4: {
+      icon: 'fa-solid fa-person-praying',
+      gradient: 'linear-gradient(135deg, #1A0802 0%, #4A1E0A 100%)',
+      tagEs: 'Mensual',
+      tagEn: 'Monthly',
+      titleEs: 'Ayuno Congregacional',
+      titleEn: 'Congregational Fast',
+      dateEs: 'Primer sábado de cada mes',
+      dateEn: 'First Saturday of each month',
+      timeEs: '8:00 AM – 12:00 MD',
+      timeEn: '8:00 AM – 12:00 PM',
+      location: 'Tacares de Grecia, Alajuela, Costa Rica',
+      freqEs: 'Mensual (primer sábado)',
+      freqEn: 'Monthly (first Saturday)',
+      descEs: [
+        'El Ayuno Congregacional es uno de los momentos espirituales más poderosos que vivimos como iglesia. El primer sábado de cada mes, la congregación se une para apartar el día al Señor, renunciar al sustento físico y alimentarse únicamente de Su presencia y Su Palabra.',
+        'Creemos que el ayuno colectivo libera el poder de Dios de una manera especial. A través de él, quebrantamos fortalezas, buscamos dirección divina, intercedemos por nuestra comunidad y nos alineamos con los propósitos eternos de Dios para esta iglesia y esta generación.'
+      ],
+      descEn: [
+        'The Congregational Fast is one of the most powerful spiritual moments we experience as a church. On the first Saturday of each month, the congregation unites to set the day apart for the Lord — laying aside physical nourishment to feed solely on His presence and His Word.',
+        'We believe that collective fasting releases the power of God in a special way. Through it, we break strongholds, seek divine direction, intercede for our community, and align ourselves with God\'s eternal purposes for this church and this generation.'
+      ],
+      expectTitleEs: '¿Qué puedes esperar?',
+      expectTitleEn: 'What can you expect?',
+      expectEs: [
+        'Un día apartado de ayuno y oración personal',
+        'Reunión congregacional de intercesión y clamor',
+        'Adoración profunda en la presencia de Dios',
+        'Ministración de la Palabra y tiempo de escuchar a Dios',
+        'Quebrantamiento de cargas y renovación espiritual'
+      ],
+      expectEn: [
+        'A day set apart for personal fasting and prayer',
+        'Congregational intercession and corporate cry to God',
+        'Deep worship in the presence of God',
+        'Ministry of the Word and time to hear from God',
+        'Breaking of burdens and spiritual renewal'
+      ],
+      ctaEs: 'Contáctanos para más información',
+      ctaEn: 'Contact us for more information'
     }
   };
 
@@ -3391,6 +3642,17 @@
     // CTA
     document.getElementById('eventModalCta').textContent = isEs ? e.ctaEs : e.ctaEn;
 
+    // "Yo estuve aquí" — solo en Campaña Evangelística (id 3)
+    const registroSection = document.getElementById('eventoRegistro');
+    if (id === 3) {
+      registroSection.style.display = 'block';
+      document.getElementById('registroForm').reset();
+      document.getElementById('registroMsg').style.display = 'none';
+      actualizarEstadosRegistro();
+    } else {
+      registroSection.style.display = 'none';
+    }
+
     // Open
     document.getElementById('eventModal').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -3399,6 +3661,64 @@
   function closeEventModal() {
     document.getElementById('eventModal').classList.remove('open');
     document.body.style.overflow = '';
+  }
+
+  /* =============================================
+     "YO ESTUVE AQUÍ" — Registro de asistencia
+  ============================================= */
+  const REGISTRO_STORAGE_KEY = 'ucg_campana_evangelistica_2026';
+
+  function submitRegistro(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('registroNombre').value.trim();
+    const cedula = document.getElementById('registroCedula').value.trim();
+    if (!nombre || !cedula) return;
+
+    const registros = JSON.parse(localStorage.getItem(REGISTRO_STORAGE_KEY) || '[]');
+
+    // Verificar cédula duplicada
+    if (registros.find(r => r.cedula === cedula)) {
+      mostrarMensajeRegistro('dup');
+      return;
+    }
+
+    const ahora = new Date();
+    registros.push({
+      nombre,
+      cedula,
+      fecha: ahora.toLocaleDateString('es-CR'),
+      hora: ahora.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit' })
+    });
+    localStorage.setItem(REGISTRO_STORAGE_KEY, JSON.stringify(registros));
+
+    document.getElementById('registroForm').reset();
+    mostrarMensajeRegistro('ok');
+    actualizarEstadosRegistro();
+  }
+
+  function mostrarMensajeRegistro(tipo) {
+    const msg = document.getElementById('registroMsg');
+    const isEs = (document.documentElement.getAttribute('data-lang') || 'es') === 'es';
+    if (tipo === 'ok') {
+      msg.textContent = isEs ? '¡Registro exitoso! Gracias por asistir.' : 'Successfully registered! Thank you for attending.';
+      msg.className = 'registro-msg registro-msg--ok';
+    } else {
+      msg.textContent = isEs ? 'Este número ya está registrado.' : 'This number is already registered.';
+      msg.className = 'registro-msg registro-msg--dup';
+    }
+    msg.style.display = 'inline-block';
+    setTimeout(() => { msg.style.display = 'none'; }, 3500);
+  }
+
+  function actualizarEstadosRegistro() {
+    const registros = JSON.parse(localStorage.getItem(REGISTRO_STORAGE_KEY) || '[]');
+    const isEs = (document.documentElement.getAttribute('data-lang') || 'es') === 'es';
+    const stats = document.getElementById('registroStats');
+    stats.textContent = registros.length > 0
+      ? (isEs
+          ? `${registros.length} persona(s) registrada(s)`
+          : `${registros.length} person(s) registered`)
+      : '';
   }
 
   /* =============================================
@@ -3539,6 +3859,63 @@
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
+
+  /* =============================================
+     EMAILJS — Formulario de contacto
+     CONFIGURACIÓN REQUERIDA (ver instrucciones):
+       1. Reemplaza EMAILJS_PUBLIC_KEY con tu Public Key
+       2. Reemplaza EMAILJS_SERVICE_ID con tu Service ID
+       3. Reemplaza EMAILJS_TEMPLATE_ID con tu Template ID
+  ============================================= */
+  const EMAILJS_PUBLIC_KEY  = 'oqp96ysC7JhwCG6r4';       // ← tu Public Key
+  const EMAILJS_SERVICE_ID  = 'service_3dff4sn';    // ← tu Service ID
+  const EMAILJS_TEMPLATE_ID = 'template_orvlcrk';   // ← tu Template ID
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  function enviarContacto(e) {
+    e.preventDefault();
+    const isEs = (document.documentElement.getAttribute('data-lang') || 'es') === 'es';
+    const btn  = document.getElementById('contactSubmitBtn');
+    const msg  = document.getElementById('contactFormMsg');
+
+    // Validación básica
+    const nombre  = document.getElementById('contactNombre').value.trim();
+    const email   = document.getElementById('contactEmail').value.trim();
+    const mensaje = document.getElementById('contactMensaje').value.trim();
+    if (!nombre || !email || !mensaje) {
+      msg.textContent = isEs ? 'Por favor completa todos los campos.' : 'Please fill in all fields.';
+      msg.className = 'contact-form-msg contact-form-msg--err';
+      msg.style.display = 'block';
+      return;
+    }
+
+    // Estado de carga
+    btn.disabled = true;
+    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>&nbsp;${isEs ? 'Enviando…' : 'Sending…'}`;
+    msg.style.display = 'none';
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, document.getElementById('contactForm'))
+      .then(() => {
+        msg.textContent = isEs
+          ? '✓ ¡Mensaje enviado! Pronto nos pondremos en contacto contigo.'
+          : '✓ Message sent! We will get back to you soon.';
+        msg.className = 'contact-form-msg contact-form-msg--ok';
+        msg.style.display = 'block';
+        document.getElementById('contactForm').reset();
+      })
+      .catch(() => {
+        msg.textContent = isEs
+          ? '✗ No se pudo enviar el mensaje. Intenta de nuevo más tarde.'
+          : '✗ Could not send message. Please try again later.';
+        msg.className = 'contact-form-msg contact-form-msg--err';
+        msg.style.display = 'block';
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> <span class="es-only">Enviar Mensaje</span><span class="en-only">Send Message</span>`;
+      });
+  }
 </script>
 
 </body>
