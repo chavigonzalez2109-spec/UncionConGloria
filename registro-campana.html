@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>¡Yo Estuve Aquí! · Campaña Evangelística · Unción con Gloria</title>
+  <meta name="description" content="Registra tu asistencia a la Campaña Evangelística de la Iglesia Bíblica Unción con Gloria — Tacares de Grecia, Alajuela." />
+  <meta name="theme-color" content="#5C2D0A" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ── Variables ──────────────────────────────── */
+    :root {
+      --dark:   #3a1b05;
+      --brown:  #5C2D0A;
+      --mid:    #8B5728;
+      --copper: #C08040;
+      --light:  #D4956A;
+      --cream:  #F9F5F0;
+      --white:  #FFFFFF;
+      --r:      10px;
+      --shadow: 0 8px 40px rgba(60,20,5,0.22);
+    }
+
+    /* ── Reset ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ── Animated background ────────────────────── */
+    .bg-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(160deg, #1f0a02 0%, #3a1b05 40%, #5C2D0A 75%, #7A3B12 100%);
+      overflow: hidden;
+    }
+    .bg-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C08040' fill-opacity='0.055'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    /* Floating glow orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    .orb-1 { width: 340px; height: 340px; background: #C08040; top: -80px; right: -60px; animation-delay: 0s; }
+    .orb-2 { width: 260px; height: 260px; background: #8B5728; bottom: 10%; left: -80px; animation-delay: -4s; }
+    .orb-3 { width: 180px; height: 180px; background: #D4956A; top: 45%; right: -30px; animation-delay: -8s; }
+    @keyframes drift {
+      from { transform: translateY(0) scale(1); }
+      to   { transform: translateY(30px) scale(1.08); }
+    }
+
+    /* ── Page wrapper ───────────────────────────── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── Church header ──────────────────────────── */
+    .church-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 12px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .church-logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(192,128,64,0.5);
+      box-shadow:
+        0 0 0 6px rgba(192,128,64,0.12),
+        0 0 0 14px rgba(192,128,64,0.06),
+        var(--shadow);
+      margin-bottom: 14px;
+    }
+    .church-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .church-sub {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .header-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+      margin: 14px auto 0;
+    }
+
+    /* ── Campaign banner card ───────────────────── */
+    .campaign-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(192,128,64,0.25);
+      border-radius: var(--r);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow: hidden;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .campaign-top {
+      background: linear-gradient(135deg, #8B1A1A 0%, #C04A1A 100%);
+      padding: 22px 24px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-top::after {
+      content: '';
+      position: absolute;
+      right: -20px; top: -20px;
+      width: 120px; height: 120px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .campaign-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 10px;
+    }
+    .campaign-badge i { font-size: 10px; }
+    .campaign-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .campaign-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+      font-style: italic;
+    }
+    .campaign-body {
+      padding: 20px 24px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(192,128,64,0.15);
+      border: 1px solid rgba(192,128,64,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--copper);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .info-text { flex: 1; }
+    .info-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 2px;
+    }
+    .info-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+    }
+
+    /* ── Registration card ──────────────────────── */
+    .reg-card {
+      background: var(--white);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .reg-header {
+      background: linear-gradient(135deg, var(--brown) 0%, var(--mid) 100%);
+      padding: 24px;
+      text-align: center;
+      position: relative;
+    }
+    .reg-header-icon {
+      width: 54px;
+      height: 54px;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 22px;
+      color: var(--white);
+    }
+    .reg-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .reg-header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 4px;
+    }
+
+    /* Form */
+    .reg-body { padding: 28px 24px 24px; }
+    .field {
+      margin-bottom: 18px;
+    }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 7px;
+    }
+    .field input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #e0c9b0;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      color: var(--brown);
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .field input:focus {
+      border-color: var(--copper);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(192,128,64,0.12);
+    }
+    .field input::placeholder { color: #b89070; }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--copper) 0%, #a06030 100%);
+      color: var(--white);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      box-shadow: 0 4px 16px rgba(192,128,64,0.35);
+      letter-spacing: 0.03em;
+    }
+    .submit-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(192,128,64,0.45); }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+    /* Form messages */
+    .form-msg {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+    }
+    .form-msg--ok  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+    .form-msg--dup { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+    .form-msg--err { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+
+    /* Counter */
+    .reg-counter {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--mid);
+      font-weight: 600;
+    }
+    .reg-counter i { color: var(--copper); }
+
+    /* ── Success screen ──────────────────────────── */
+    .success-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 36px 24px 32px;
+    }
+    .success-circle {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #43a047, #2e7d32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(46,125,50,0.35);
+      margin-bottom: 20px;
+      animation: popIn 0.45s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .success-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+    .success-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--copper);
+      margin-bottom: 12px;
+    }
+    .success-msg {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+      max-width: 300px;
+      margin: 0 auto 24px;
+    }
+    .success-verse {
+      background: var(--cream);
+      border-left: 3px solid var(--copper);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--mid);
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    .success-verse cite {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--copper);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+    .back-link {
+      font-size: 13px;
+      color: var(--mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--copper); }
+
+    /* ── Footer ──────────────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding: 8px 0;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.8;
+    }
+    .site-footer a { color: rgba(192,128,64,0.6); }
+
+    /* ── Animations ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="page">
+
+    <!-- ── Church header ── -->
+    <header class="church-header">
+      <img
+        src="assets/img/logo-cream.jpg"
+        alt="Unción con Gloria"
+        class="church-logo"
+      />
+      <h1 class="church-name">Unción con Gloria</h1>
+      <p class="church-sub">Iglesia Bíblica · Tacares de Grecia, Costa Rica</p>
+      <div class="header-divider"></div>
+    </header>
+
+    <!-- ── Campaign info card ── -->
+    <div class="campaign-card">
+      <div class="campaign-top">
+        <div class="campaign-badge">
+          <i class="fa-solid fa-bullhorn"></i>
+          Evento Especial
+        </div>
+        <h2 class="campaign-title">Campaña Evangelística</h2>
+        <p class="campaign-subtitle">"El poder del evangelio transforma vidas"</p>
+      </div>
+      <div class="campaign-body">
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="info-text">
+            <div class="info-label">Fechas</div>
+            <div class="info-value">Viernes 27 y Sábado 28 de Marzo, 2026</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="info-text">
+            <div class="info-label">Hora</div>
+            <div class="info-value">6:00 PM en adelante</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <div class="info-label">Lugar</div>
+            <div class="info-value">Plaza de Deportes de Cataluña, Tacares de Grecia</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-church"></i></div>
+          <div class="info-text">
+            <div class="info-label">Organiza</div>
+            <div class="info-value">Iglesia Bíblica Unción con Gloria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Registration card ── -->
+    <div class="reg-card">
+      <div class="reg-header">
+        <div class="reg-header-icon">
+          <i class="fa-solid fa-id-card"></i>
+        </div>
+        <h2>¡Yo estuve aquí!</h2>
+        <p>Registra tu asistencia a este evento histórico</p>
+      </div>
+
+      <!-- Form -->
+      <div class="reg-body" id="formWrap">
+        <form id="regForm" onsubmit="submitRegistro(event)" novalidate>
+          <div class="field">
+            <label><i class="fa-solid fa-user" style="margin-right:5px;"></i>Nombre completo</label>
+            <input
+              type="text"
+              id="rNombre"
+              autocomplete="name"
+              placeholder="Tu nombre completo"
+              required
+            />
+          </div>
+          <div class="field">
+            <label><i class="fa-solid fa-mobile-screen-button" style="margin-right:5px;"></i>Número de celular</label>
+            <input
+              type="tel"
+              id="rCelular"
+              autocomplete="tel"
+              placeholder="Ej: 8888-8888"
+              required
+            />
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <i class="fa-solid fa-circle-check"></i>
+            Registrarme
+          </button>
+          <div id="formMsg" class="form-msg"></div>
+        </form>
+        <div class="reg-counter" id="regCounter" style="display:none">
+          <i class="fa-solid fa-users"></i>
+          <span id="counterText"></span>
+        </div>
+      </div>
+
+      <!-- Success screen (shown after registration) -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 class="success-title">¡Registro exitoso!</h3>
+        <p class="success-name" id="successName"></p>
+        <p class="success-msg">
+          Gracias por ser parte de esta Campaña Evangelística.
+          Tu presencia es una bendición y parte de la historia
+          de Unción con Gloria.
+        </p>
+        <blockquote class="success-verse">
+          "Porque no me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree."
+          <cite>Romanos 1:16</cite>
+        </blockquote>
+        <span class="back-link" onclick="nuevoRegistro()">
+          <i class="fa-solid fa-arrow-left"></i>
+          Registrar otra persona
+        </span>
+      </div>
+    </div>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+      <p>
+        <a href="https://uncioncongloria.com" target="_blank">uncioncongloria.com</a>
+      </p>
+      <p>Tacares de Grecia, Alajuela, Costa Rica &nbsp;·&nbsp; Desde 1999</p>
+    </footer>
+
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'ucg_campana_evangelistica_2026';
+
+    /* ── Inicializar contador ─────────────────── */
+    function actualizarContador() {
+      const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      const el = document.getElementById('regCounter');
+      const txt = document.getElementById('counterText');
+      if (registros.length > 0) {
+        txt.textContent = `${registros.length} persona${registros.length !== 1 ? 's' : ''} registrada${registros.length !== 1 ? 's' : ''}`;
+        el.style.display = 'flex';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+
+    /* ── Submit ──────────────────────────────── */
+    function submitRegistro(e) {
+      e.preventDefault();
+      const nombre  = document.getElementById('rNombre').value.trim();
+      const celular = document.getElementById('rCelular').value.trim();
+      const msg     = document.getElementById('formMsg');
+      const btn     = document.getElementById('submitBtn');
+
+      if (!nombre || !celular) {
+        mostrarMsg('Por favor completá todos los campos.', 'err');
+        return;
+      }
+
+      const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+      // Duplicado
+      if (registros.find(r => r.celular === celular)) {
+        mostrarMsg('Este número de celular ya está registrado.', 'dup');
+        return;
+      }
+
+      // Loading
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registrando…';
+
+      // Simular pequeño delay para mejor UX
+      setTimeout(() => {
+        const ahora = new Date();
+        registros.push({
+          nombre,
+          celular,
+          fecha: ahora.toLocaleDateString('es-CR'),
+          hora:  ahora.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit' })
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(registros));
+
+        // Mostrar pantalla de éxito
+        document.getElementById('rNombre').value  = '';
+        document.getElementById('rCelular').value = '';
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Registrarme';
+
+        document.getElementById('successName').textContent =
+          `¡Bienvenido/a, ${nombre}!`;
+        document.getElementById('formWrap').style.display  = 'none';
+        document.getElementById('successScreen').style.display = 'flex';
+        actualizarContador();
+      }, 600);
+    }
+
+    /* ── Mensaje inline ─────────────────────── */
+    function mostrarMsg(texto, tipo) {
+      const el = document.getElementById('formMsg');
+      el.textContent  = texto;
+      el.className    = `form-msg form-msg--${tipo}`;
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 4000);
+    }
+
+    /* ── Nuevo registro ─────────────────────── */
+    function nuevoRegistro() {
+      document.getElementById('successScreen').style.display = 'none';
+      document.getElementById('formWrap').style.display      = 'block';
+    }
+
+    // Init
+    actualizarContador();
+  </script>
+</body>
+</html>
