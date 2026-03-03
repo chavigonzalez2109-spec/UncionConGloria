@@ -3,593 +3,1070 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>¡Yo Estuve Aquí! · Campaña Evangelística · Unción con Gloria</title>
-  <meta name="description" content="Registra tu asistencia a la Campaña Evangelística de la Iglesia Bíblica Unción con Gloria — Tacares de Grecia, Alajuela." />
-  <meta name="theme-color" content="#5C2D0A" />
+  <title>Campaña Evangelística 2026 · Unción con Gloria</title>
+  <meta name="description" content="Únete a la Campaña Evangelística de Iglesia Bíblica Unción con Gloria. Registra tu información para mantenerte conectado." />
+  <meta name="theme-color" content="#3a1b05" />
+  <meta property="og:title"       content="Campaña Evangelística 2026 · Unción con Gloria" />
+  <meta property="og:description" content="Dos noches de poder y gloria. Tacares de Grecia, 27 y 28 de marzo 2026." />
+  <meta property="og:image"       content="assets/img/logo-v2.jpg" />
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* ── Variables ──────────────────────────────── */
-    :root {
-      --dark:   #3a1b05;
-      --brown:  #5C2D0A;
-      --mid:    #8B5728;
-      --copper: #C08040;
-      --light:  #D4956A;
-      --cream:  #F9F5F0;
-      --white:  #FFFFFF;
-      --r:      10px;
-      --shadow: 0 8px 40px rgba(60,20,5,0.22);
-    }
+  /* ─────────────────────────────────────────────
+     BASE
+  ───────────────────────────────────────────── */
+  :root {
+    --dark:   #1f0a02;
+    --brown:  #5C2D0A;
+    --mid:    #8B5728;
+    --copper: #C08040;
+    --light:  #D4956A;
+    --cream:  #F9F5F0;
+    --white:  #FFFFFF;
+    --r: 12px;
+    --sans:   'Open Sans', sans-serif;
+    --serif:  'Playfair Display', Georgia, serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--brown);
+    overflow-x: hidden;
+  }
+  img  { display: block; max-width: 100%; }
+  a    { color: inherit; text-decoration: none; }
 
-    /* ── Reset ──────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: var(--dark);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    img { display: block; max-width: 100%; }
-    a   { color: inherit; text-decoration: none; }
+  /* ─────────────────────────────────────────────
+     STICKY TOPBAR
+  ───────────────────────────────────────────── */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: rgba(31,10,2,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(192,128,64,0.15);
+  }
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topbar-logo {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(192,128,64,0.5);
+  }
+  .topbar-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .topbar-name span {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(192,128,64,0.8);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .topbar-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--copper);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .topbar-cta:hover { background: var(--mid); transform: translateY(-1px); }
 
-    /* ── Animated background ────────────────────── */
-    .bg-wrap {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background: linear-gradient(160deg, #1f0a02 0%, #3a1b05 40%, #5C2D0A 75%, #7A3B12 100%);
-      overflow: hidden;
-    }
-    .bg-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C08040' fill-opacity='0.055'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-    }
-    /* Floating glow orbs */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.18;
-      animation: drift 12s ease-in-out infinite alternate;
-    }
-    .orb-1 { width: 340px; height: 340px; background: #C08040; top: -80px; right: -60px; animation-delay: 0s; }
-    .orb-2 { width: 260px; height: 260px; background: #8B5728; bottom: 10%; left: -80px; animation-delay: -4s; }
-    .orb-3 { width: 180px; height: 180px; background: #D4956A; top: 45%; right: -30px; animation-delay: -8s; }
-    @keyframes drift {
-      from { transform: translateY(0) scale(1); }
-      to   { transform: translateY(30px) scale(1.08); }
-    }
+  /* ─────────────────────────────────────────────
+     HERO
+  ───────────────────────────────────────────── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 60px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #1f0a02 0%, #3a1b05 45%, #5C2D0A 80%, #7A3B12 100%);
+  }
+  /* Pattern overlay */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C08040' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  /* Glow orbs */
+  .hero-orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(90px); opacity: 0.15; pointer-events: none;
+  }
+  .hero-orb-1 { width: 400px; height: 400px; background: #C08040; top: -120px; right: -100px; }
+  .hero-orb-2 { width: 300px; height: 300px; background: #8B5728; bottom: -80px; left: -80px; }
 
-    /* ── Page wrapper ───────────────────────────── */
-    .page {
-      position: relative;
-      z-index: 1;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 32px 16px 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+  .hero-content { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
 
-    /* ── Church header ──────────────────────────── */
-    .church-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-top: 12px;
-      animation: fadeUp 0.6s ease both;
-    }
-    .church-logo {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(192,128,64,0.5);
-      box-shadow:
-        0 0 0 6px rgba(192,128,64,0.12),
-        0 0 0 14px rgba(192,128,64,0.06),
-        var(--shadow);
-      margin-bottom: 14px;
-    }
-    .church-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 26px;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: 0.01em;
-      line-height: 1.15;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    .church-sub {
-      margin-top: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--copper);
-    }
-    .header-divider {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--copper), transparent);
-      margin: 14px auto 0;
-    }
+  /* Church logo */
+  .hero-logo-wrap {
+    position: relative;
+    width: 110px; height: 110px;
+    margin: 0 auto 24px;
+  }
+  .hero-logo {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(192,128,64,0.5);
+    box-shadow:
+      0 0 0 8px rgba(192,128,64,0.1),
+      0 0 0 18px rgba(192,128,64,0.05),
+      0 16px 48px rgba(0,0,0,0.5);
+  }
 
-    /* ── Campaign banner card ───────────────────── */
-    .campaign-card {
-      background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
-      border: 1px solid rgba(192,128,64,0.25);
-      border-radius: var(--r);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      overflow: hidden;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-    .campaign-top {
-      background: linear-gradient(135deg, #8B1A1A 0%, #C04A1A 100%);
-      padding: 22px 24px 18px;
-      position: relative;
-      overflow: hidden;
-    }
-    .campaign-top::after {
-      content: '';
-      position: absolute;
-      right: -20px; top: -20px;
-      width: 120px; height: 120px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 50%;
-    }
-    .campaign-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 10px;
-    }
-    .campaign-badge i { font-size: 10px; }
-    .campaign-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.2;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    .campaign-subtitle {
-      font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      margin-top: 6px;
-      font-style: italic;
-    }
-    .campaign-body {
-      padding: 20px 24px;
-    }
-    .info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .info-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(192,128,64,0.15);
-      border: 1px solid rgba(192,128,64,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--copper);
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-    .info-text { flex: 1; }
-    .info-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 2px;
-    }
-    .info-value {
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.4;
-    }
+  /* Campaign badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(192,128,64,0.18);
+    border: 1px solid rgba(192,128,64,0.4);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 18px;
+  }
+  .hero-badge i { font-size: 10px; }
 
-    /* ── Registration card ──────────────────────── */
-    .reg-card {
-      background: var(--white);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      animation: fadeUp 0.6s 0.2s ease both;
-    }
-    .reg-header {
-      background: linear-gradient(135deg, var(--brown) 0%, var(--mid) 100%);
-      padding: 24px;
-      text-align: center;
-      position: relative;
-    }
-    .reg-header-icon {
-      width: 54px;
-      height: 54px;
-      background: rgba(255,255,255,0.12);
-      border: 2px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      font-size: 22px;
-      color: var(--white);
-    }
-    .reg-header h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-    }
-    .reg-header p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      margin-top: 4px;
-    }
+  .hero-church {
+    font-family: var(--serif);
+    font-size: clamp(28px, 7vw, 46px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    margin-bottom: 8px;
+  }
+  .hero-tagline {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 24px;
+  }
 
-    /* Form */
-    .reg-body { padding: 28px 24px 24px; }
-    .field {
-      margin-bottom: 18px;
-    }
-    .field label {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 7px;
-    }
-    .field input {
-      width: 100%;
-      padding: 13px 16px;
-      border: 1.5px solid #e0c9b0;
-      border-radius: 8px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 15px;
-      color: var(--brown);
-      background: var(--cream);
-      outline: none;
-      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    }
-    .field input:focus {
-      border-color: var(--copper);
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(192,128,64,0.12);
-    }
-    .field input::placeholder { color: #b89070; }
+  /* Event highlight box */
+  .hero-event {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--r);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    backdrop-filter: blur(8px);
+    text-align: left;
+  }
+  .hero-event-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 8px;
+  }
+  .hero-event-title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(192,128,64,0.2);
+    border: 1px solid rgba(192,128,64,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.88);
+  }
+  .hero-pill i { color: var(--copper); font-size: 11px; }
 
-    .submit-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, var(--copper) 0%, #a06030 100%);
-      color: var(--white);
-      font-family: 'Open Sans', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-      box-shadow: 0 4px 16px rgba(192,128,64,0.35);
-      letter-spacing: 0.03em;
-    }
-    .submit-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(192,128,64,0.45); }
-    .submit-btn:active { transform: translateY(0); }
-    .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--copper);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 6px 28px rgba(192,128,64,0.45);
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-bottom: 20px;
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(192,128,64,0.55); }
 
-    /* Form messages */
-    .form-msg {
-      margin-top: 14px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-      display: none;
-    }
-    .form-msg--ok  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
-    .form-msg--dup { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
-    .form-msg--err { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+  .hero-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .hero-scroll i { animation: bounce 2s ease-in-out infinite; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(5px); }
+  }
 
-    /* Counter */
-    .reg-counter {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--mid);
-      font-weight: 600;
-    }
-    .reg-counter i { color: var(--copper); }
+  /* ─────────────────────────────────────────────
+     WHO WE ARE (Misión y Visión)
+  ───────────────────────────────────────────── */
+  .who-section {
+    background: var(--cream);
+    padding: 72px 24px;
+  }
+  .who-inner { max-width: 720px; margin: 0 auto; }
 
-    /* ── Success screen ──────────────────────────── */
-    .success-screen {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 36px 24px 32px;
-    }
-    .success-circle {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #43a047, #2e7d32);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      color: #fff;
-      box-shadow: 0 6px 24px rgba(46,125,50,0.35);
-      margin-bottom: 20px;
-      animation: popIn 0.45s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
-    @keyframes popIn {
-      from { transform: scale(0); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-    .success-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--brown);
-      margin-bottom: 8px;
-    }
-    .success-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--copper);
-      margin-bottom: 12px;
-    }
-    .success-msg {
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.65;
-      max-width: 300px;
-      margin: 0 auto 24px;
-    }
-    .success-verse {
-      background: var(--cream);
-      border-left: 3px solid var(--copper);
-      border-radius: 6px;
-      padding: 14px 18px;
-      font-size: 13px;
-      font-style: italic;
-      color: var(--mid);
-      text-align: left;
-      margin-bottom: 24px;
-    }
-    .success-verse cite {
-      display: block;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 11px;
-      color: var(--copper);
-      margin-top: 6px;
-      letter-spacing: 0.05em;
-    }
-    .back-link {
-      font-size: 13px;
-      color: var(--mid);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--copper); }
+  .section-eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .section-lead {
+    text-align: center;
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+  .divider-line {
+    width: 56px; height: 3px;
+    background: var(--copper);
+    border-radius: 2px;
+    margin: 0 auto 48px;
+  }
 
-    /* ── Footer ──────────────────────────────────── */
-    .site-footer {
-      text-align: center;
-      padding: 8px 0;
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-    .site-footer p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      line-height: 1.8;
-    }
-    .site-footer a { color: rgba(192,128,64,0.6); }
+  .who-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 560px) { .who-cards { grid-template-columns: 1fr; } }
 
-    /* ── Animations ──────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  .who-card {
+    background: var(--white);
+    border-radius: var(--r);
+    padding: 28px 24px;
+    box-shadow: 0 2px 16px rgba(92,45,10,0.08);
+    border-top: 3px solid var(--copper);
+  }
+  .who-card-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #C08040, #8B5728);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(192,128,64,0.3);
+  }
+  .who-card h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+  .who-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
+  /* Scripture quote */
+  .scripture-wrap {
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--brown) 0%, var(--mid) 100%);
+    border-radius: var(--r);
+    padding: 28px 28px 24px;
+    text-align: center;
+  }
+  .scripture-wrap i {
+    font-size: 28px;
+    color: rgba(192,128,64,0.5);
+    margin-bottom: 12px;
+  }
+  .scripture-text {
+    font-family: var(--serif);
+    font-size: clamp(15px, 3.5vw, 18px);
+    font-style: italic;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .scripture-ref {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  /* ─────────────────────────────────────────────
+     CAMPAIGN SECTION
+  ───────────────────────────────────────────── */
+  .campaign-section {
+    background: linear-gradient(160deg, #6B1A1A 0%, #8B1A1A 50%, #C04A1A 100%);
+    padding: 72px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .campaign-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h10v-5h5v5h10v-5h5v5h10V23h-5v-5h5V13H20v7.5zM10 13H0V8l10 5zm10 0l10-5v5H20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .campaign-inner {
+    position: relative; z-index: 1;
+    max-width: 720px; margin: 0 auto;
+  }
+  .campaign-section .section-eyebrow { color: rgba(255,220,180,0.8); }
+  .campaign-section .section-title   { color: var(--white); }
+  .campaign-section .section-lead    { color: rgba(255,255,255,0.75); }
+  .campaign-section .divider-line    { background: rgba(255,255,255,0.3); }
+
+  .campaign-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 500px) { .campaign-details { grid-template-columns: 1fr; } }
+
+  .detail-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    backdrop-filter: blur(8px);
+  }
+  .detail-card i {
+    font-size: 20px;
+    color: rgba(255,200,140,0.85);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .detail-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,200,140,0.7);
+    margin-bottom: 4px;
+  }
+  .detail-card-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.4;
+  }
+
+  .campaign-description {
+    background: rgba(0,0,0,0.2);
+    border-left: 3px solid rgba(255,200,140,0.4);
+    border-radius: 0 var(--r) var(--r) 0;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.82);
+  }
+  .campaign-cta-wrap {
+    margin-top: 32px;
+    text-align: center;
+  }
+  .campaign-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--brown);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 50px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .campaign-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
+  .campaign-cta i { color: var(--copper); }
+
+  /* ─────────────────────────────────────────────
+     REGISTRATION SECTION
+  ───────────────────────────────────────────── */
+  .reg-section {
+    background: var(--white);
+    padding: 72px 24px 80px;
+  }
+  .reg-inner {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Form card */
+  .reg-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 2px 8px rgba(92,45,10,0.08),
+      0 16px 48px rgba(92,45,10,0.12);
+  }
+  .reg-card-header {
+    background: linear-gradient(135deg, var(--brown) 0%, var(--mid) 100%);
+    padding: 32px 28px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .reg-card-header::after {
+    content: '';
+    position: absolute;
+    right: -30px; bottom: -30px;
+    width: 140px; height: 140px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .reg-card-header::before {
+    content: '';
+    position: absolute;
+    left: -20px; top: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .reg-icon-wrap {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 24px;
+    color: var(--white);
+    position: relative; z-index: 1;
+  }
+  .reg-card-header h2 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    position: relative; z-index: 1;
+  }
+  .reg-card-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+
+  /* Form body */
+  .reg-form-body { padding: 32px 28px 28px; }
+
+  .why-register {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 28px;
+  }
+  .why-register i {
+    color: var(--copper);
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .why-register p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--mid);
+  }
+
+  /* Fields */
+  .field { margin-bottom: 20px; }
+  .field label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 8px;
+  }
+  .field label i { font-size: 11px; }
+  .field input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #dcc8b0;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--brown);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+  .field input:focus {
+    border-color: var(--copper);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(192,128,64,0.12);
+  }
+  .field input::placeholder { color: #b89872; }
+
+  /* Submit */
+  .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #C08040 0%, #8B5728 100%);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(192,128,64,0.35);
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    letter-spacing: 0.02em;
+    -webkit-appearance: none;
+  }
+  .submit-btn:hover  { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,128,64,0.45); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* Inline messages */
+  .form-msg {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+  }
+  .form-msg--ok  { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+  .form-msg--dup { background: #fff3e0; color: #bf360c; border: 1px solid #ffcc80; }
+  .form-msg--err { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
+
+  /* Counter */
+  .reg-counter {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--mid);
+    font-weight: 600;
+    padding: 10px;
+    background: var(--cream);
+    border-radius: 8px;
+    display: none;
+  }
+  .reg-counter i { color: var(--copper); }
+
+  /* ── Success screen ─────────────────────────── */
+  .success-wrap {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 28px 36px;
+  }
+  .success-circle {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #43a047, #1b5e20);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px; color: var(--white);
+    box-shadow: 0 8px 28px rgba(46,125,50,0.4);
+    margin-bottom: 22px;
+    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+  .success-wrap h3 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+  .success-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--copper);
+    margin-bottom: 16px;
+  }
+  .success-msg {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 320px;
+    margin-bottom: 24px;
+  }
+  .success-verse {
+    background: var(--cream);
+    border-left: 3px solid var(--copper);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    text-align: left;
+    margin-bottom: 28px;
+    width: 100%;
+  }
+  .success-verse p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--brown);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .success-verse cite {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mid);
+    cursor: pointer;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: var(--sans);
+  }
+  .back-btn:hover { color: var(--copper); }
+
+  /* ─────────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────────── */
+  .site-footer {
+    background: var(--dark);
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .footer-logo {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 14px;
+    border: 2px solid rgba(192,128,64,0.3);
+    opacity: 0.85;
+  }
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 4px;
+  }
+  .footer-info {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 2;
+  }
+  .footer-info a {
+    color: rgba(192,128,64,0.6);
+    transition: color 0.2s;
+  }
+  .footer-info a:hover { color: var(--copper); }
+  .footer-divider {
+    width: 40px; height: 1px;
+    background: rgba(192,128,64,0.2);
+    margin: 16px auto;
+  }
+
+  /* ─────────────────────────────────────────────
+     UTILITIES / ANIMATIONS
+  ───────────────────────────────────────────── */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  [data-reveal].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   </style>
 </head>
 <body>
 
-  <!-- Animated background -->
-  <div class="bg-wrap" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  <main class="page">
-
-    <!-- ── Church header ── -->
-    <header class="church-header">
-      <img
-        src="assets/img/logo-cream.jpg"
-        alt="Unción con Gloria"
-        class="church-logo"
-      />
-      <h1 class="church-name">Unción con Gloria</h1>
-      <p class="church-sub">Iglesia Bíblica · Tacares de Grecia, Costa Rica</p>
-      <div class="header-divider"></div>
-    </header>
-
-    <!-- ── Campaign info card ── -->
-    <div class="campaign-card">
-      <div class="campaign-top">
-        <div class="campaign-badge">
-          <i class="fa-solid fa-bullhorn"></i>
-          Evento Especial
-        </div>
-        <h2 class="campaign-title">Campaña Evangelística</h2>
-        <p class="campaign-subtitle">"El poder del evangelio transforma vidas"</p>
-      </div>
-      <div class="campaign-body">
-        <div class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-calendar-days"></i></div>
-          <div class="info-text">
-            <div class="info-label">Fechas</div>
-            <div class="info-value">Viernes 27 y Sábado 28 de Marzo, 2026</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
-          <div class="info-text">
-            <div class="info-label">Hora</div>
-            <div class="info-value">6:00 PM en adelante</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="info-text">
-            <div class="info-label">Lugar</div>
-            <div class="info-value">Plaza de Deportes de Cataluña, Tacares de Grecia</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-church"></i></div>
-          <div class="info-text">
-            <div class="info-label">Organiza</div>
-            <div class="info-value">Iglesia Bíblica Unción con Gloria</div>
-          </div>
-        </div>
+  <!-- ── Sticky topbar ─────────────────────────── -->
+  <nav class="topbar">
+    <div class="topbar-brand">
+      <img src="assets/img/logo-cream.jpg" alt="Unción con Gloria" class="topbar-logo" />
+      <div class="topbar-name">
+        Unción con Gloria
+        <span>Iglesia Bíblica</span>
       </div>
     </div>
+    <a href="#registro" class="topbar-cta">
+      <i class="fa-solid fa-id-card"></i> Regístrate
+    </a>
+  </nav>
 
-    <!-- ── Registration card ── -->
-    <div class="reg-card">
-      <div class="reg-header">
-        <div class="reg-header-icon">
-          <i class="fa-solid fa-id-card"></i>
-        </div>
-        <h2>¡Yo estuve aquí!</h2>
-        <p>Registra tu asistencia a este evento histórico</p>
+  <!-- ════════════════════════════════════════════
+       HERO
+  ═════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <img src="assets/img/logo-cream.jpg" alt="Unción con Gloria" class="hero-logo" />
+
+      <div class="hero-badge">
+        <i class="fa-solid fa-star"></i>
+        Evento Especial 2026
       </div>
 
-      <!-- Form -->
-      <div class="reg-body" id="formWrap">
-        <form id="regForm" onsubmit="submitRegistro(event)" novalidate>
-          <div class="field">
-            <label><i class="fa-solid fa-user" style="margin-right:5px;"></i>Nombre completo</label>
-            <input
-              type="text"
-              id="rNombre"
-              autocomplete="name"
-              placeholder="Tu nombre completo"
-              required
-            />
-          </div>
-          <div class="field">
-            <label><i class="fa-solid fa-mobile-screen-button" style="margin-right:5px;"></i>Número de celular</label>
-            <input
-              type="tel"
-              id="rCelular"
-              autocomplete="tel"
-              placeholder="Ej: 8888-8888"
-              required
-            />
-          </div>
-          <button type="submit" class="submit-btn" id="submitBtn">
-            <i class="fa-solid fa-circle-check"></i>
-            Registrarme
-          </button>
-          <div id="formMsg" class="form-msg"></div>
-        </form>
-        <div class="reg-counter" id="regCounter" style="display:none">
-          <i class="fa-solid fa-users"></i>
-          <span id="counterText"></span>
+      <h1 class="hero-church">Unción con Gloria</h1>
+      <p class="hero-tagline">Iglesia Bíblica · Tacares de Grecia, Costa Rica</p>
+
+      <div class="hero-event">
+        <p class="hero-event-label"><i class="fa-solid fa-bullhorn"></i>&nbsp; Campaña Evangelística</p>
+        <p class="hero-event-title">"El poder del evangelio transforma vidas"</p>
+        <div class="hero-pills">
+          <span class="hero-pill"><i class="fa-solid fa-calendar-days"></i> 27 y 28 de Marzo</span>
+          <span class="hero-pill"><i class="fa-solid fa-clock"></i> 6:00 PM</span>
+          <span class="hero-pill"><i class="fa-solid fa-location-dot"></i> Plaza de Deportes, Tacares</span>
         </div>
       </div>
 
-      <!-- Success screen (shown after registration) -->
-      <div class="success-screen" id="successScreen">
-        <div class="success-circle">
-          <i class="fa-solid fa-check"></i>
-        </div>
-        <h3 class="success-title">¡Registro exitoso!</h3>
-        <p class="success-name" id="successName"></p>
-        <p class="success-msg">
-          Gracias por ser parte de esta Campaña Evangelística.
-          Tu presencia es una bendición y parte de la historia
-          de Unción con Gloria.
-        </p>
-        <blockquote class="success-verse">
-          "Porque no me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree."
-          <cite>Romanos 1:16</cite>
-        </blockquote>
-        <span class="back-link" onclick="nuevoRegistro()">
-          <i class="fa-solid fa-arrow-left"></i>
-          Registrar otra persona
-        </span>
+      <a href="#registro" class="hero-cta">
+        <i class="fa-solid fa-id-card"></i>
+        ¡Yo estuve aquí!
+      </a>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
     </div>
+  </section>
 
-    <!-- ── Footer ── -->
-    <footer class="site-footer">
-      <p>
-        <a href="https://uncioncongloria.com" target="_blank">uncioncongloria.com</a>
+  <!-- ════════════════════════════════════════════
+       QUIÉNES SOMOS
+  ═════════════════════════════════════════════ -->
+  <section class="who-section">
+    <div class="who-inner">
+      <p class="section-eyebrow" data-reveal>Conócenos</p>
+      <h2 class="section-title" data-reveal>Una iglesia bajo la unción<br>del Espíritu Santo</h2>
+      <p class="section-lead" data-reveal>
+        Desde 1999 servimos en Tacares de Grecia llevando el mensaje de Jesucristo
+        a nuestra comunidad y más allá de nuestras fronteras.
       </p>
-      <p>Tacares de Grecia, Alajuela, Costa Rica &nbsp;·&nbsp; Desde 1999</p>
-    </footer>
+      <div class="divider-line" data-reveal></div>
 
-  </main>
+      <div class="who-cards" data-reveal>
+        <div class="who-card">
+          <div class="who-card-icon">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3>Nuestra Misión</h3>
+          <p>
+            Operar bajo la unción y el poder del Espíritu Santo para llevar
+            la gloria de Dios a las naciones, transformando vidas a través
+            del evangelio de Jesucristo.
+          </p>
+        </div>
+        <div class="who-card">
+          <div class="who-card-icon">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3>Nuestra Visión</h3>
+          <p>
+            Ser una iglesia con gran pasión por los perdidos, alcanzando
+            y estableciendo a la comunidad en una vida con propósito para
+            Jesús y el reino de Dios.
+          </p>
+        </div>
+      </div>
+
+      <div class="scripture-wrap" data-reveal>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="scripture-text">
+          "Yo soy la vid; ustedes son las ramas. El que permanece en mí,
+          como yo en él, dará mucho fruto."
+        </p>
+        <p class="scripture-ref">Juan 15:5 · NVI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       LA CAMPAÑA
+  ═════════════════════════════════════════════ -->
+  <section class="campaign-section">
+    <div class="campaign-inner">
+      <p class="section-eyebrow" data-reveal>Campaña Evangelística 2026</p>
+      <h2 class="section-title" data-reveal>Dos noches de poder y gloria</h2>
+      <p class="section-lead" data-reveal>
+        La Iglesia Bíblica Unción con Gloria abre sus puertas a toda la región
+        con un mensaje claro y transformador: Jesucristo salva, restaura y da vida eterna.
+      </p>
+      <div class="divider-line" data-reveal></div>
+
+      <div class="campaign-details" data-reveal>
+        <div class="detail-card">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div>
+            <p class="detail-card-label">Fechas</p>
+            <p class="detail-card-value">Viernes 27 y<br>Sábado 28 de Marzo, 2026</p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <p class="detail-card-label">Hora de inicio</p>
+            <p class="detail-card-value">6:00 PM en adelante</p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <p class="detail-card-label">Lugar</p>
+            <p class="detail-card-value">Plaza de Deportes de Cataluña, Tacares de Grecia</p>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <p class="detail-card-label">Para quién</p>
+            <p class="detail-card-value">Toda la familia.<br>Entrada libre.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="campaign-description" data-reveal>
+        <strong style="color:rgba(255,220,180,0.9);">¿Qué puedes esperar?</strong>
+        &nbsp;Predicación poderosa del evangelio, testimonios de vidas transformadas,
+        llamado al altar, música de alabanza en vivo y un ambiente abierto y
+        lleno del poder de Dios para toda tu familia y comunidad.
+      </div>
+
+      <div class="campaign-cta-wrap" data-reveal>
+        <a href="#registro" class="campaign-cta">
+          <i class="fa-solid fa-id-card"></i>
+          Registra tu asistencia
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       REGISTRO — "YO ESTUVE AQUÍ"
+  ═════════════════════════════════════════════ -->
+  <section class="reg-section" id="registro">
+    <div class="reg-inner">
+      <p class="section-eyebrow" data-reveal>¡Yo estuve aquí!</p>
+      <h2 class="section-title" data-reveal>Registra tu asistencia</h2>
+      <p class="section-lead" data-reveal>
+        Déjanos tu información para mantenernos en contacto y
+        que puedas ser parte de nuestra comunidad de fe.
+      </p>
+      <div class="divider-line" data-reveal></div>
+
+      <div class="reg-card" data-reveal>
+        <!-- Header -->
+        <div class="reg-card-header">
+          <div class="reg-icon-wrap">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <h2>Formulario de Registro</h2>
+          <p>Solo toma 30 segundos. Tu información es confidencial.</p>
+        </div>
+
+        <!-- Form -->
+        <div class="reg-form-body" id="formWrap">
+          <div class="why-register">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>
+              Queremos poder <strong>contactarte y acompañarte</strong> en tu camino de fe.
+              Tu número de celular nos permite enviarte un mensaje de seguimiento.
+            </p>
+          </div>
+
+          <form id="regForm" onsubmit="submitRegistro(event)" novalidate>
+            <div class="field">
+              <label><i class="fa-solid fa-user"></i> Nombre completo</label>
+              <input
+                type="text"
+                id="rNombre"
+                autocomplete="name"
+                placeholder="Escribe tu nombre completo"
+                required
+              />
+            </div>
+            <div class="field">
+              <label><i class="fa-solid fa-mobile-screen-button"></i> Número de celular</label>
+              <input
+                type="tel"
+                id="rCelular"
+                autocomplete="tel"
+                placeholder="Ej: 8888-8888"
+                required
+              />
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <i class="fa-solid fa-circle-check"></i>
+              ¡Registrarme!
+            </button>
+            <div id="formMsg" class="form-msg"></div>
+          </form>
+
+          <div class="reg-counter" id="regCounter">
+            <i class="fa-solid fa-users"></i>
+            <span id="counterText"></span>
+          </div>
+        </div>
+
+        <!-- Success screen -->
+        <div class="success-wrap" id="successScreen">
+          <div class="success-circle">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3>¡Registro exitoso!</h3>
+          <p class="success-name" id="successName"></p>
+          <p class="success-msg">
+            Gracias por ser parte de esta Campaña Evangelística.
+            Nos pondremos en contacto contigo pronto.
+            ¡Que Dios te bendiga!
+          </p>
+          <div class="success-verse">
+            <p>"Porque no me avergüenzo del evangelio, porque es poder
+            de Dios para salvación a todo aquel que cree."</p>
+            <cite>Romanos 1:16</cite>
+          </div>
+          <button class="back-btn" onclick="nuevoRegistro()">
+            <i class="fa-solid fa-rotate-left"></i>
+            Registrar a otra persona
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ═════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <img src="assets/img/logo-cream.jpg" alt="Unción con Gloria" class="footer-logo" />
+    <p class="footer-name">Iglesia Bíblica Unción con Gloria</p>
+    <div class="footer-divider"></div>
+    <p class="footer-info">
+      Tacares de Grecia, Alajuela, Costa Rica<br />
+      Fundada en 1999<br />
+      <a href="https://uncioncongloria.com" target="_blank">uncioncongloria.com</a>
+    </p>
+  </footer>
 
   <script>
+    /* ─────────────────────────────────────────────
+       REGISTRO — localStorage
+    ───────────────────────────────────────────── */
     const STORAGE_KEY = 'ucg_campana_evangelistica_2026';
 
-    /* ── Inicializar contador ─────────────────── */
     function actualizarContador() {
       const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      const el = document.getElementById('regCounter');
+      const el  = document.getElementById('regCounter');
       const txt = document.getElementById('counterText');
       if (registros.length > 0) {
         txt.textContent = `${registros.length} persona${registros.length !== 1 ? 's' : ''} registrada${registros.length !== 1 ? 's' : ''}`;
@@ -599,12 +1076,10 @@
       }
     }
 
-    /* ── Submit ──────────────────────────────── */
     function submitRegistro(e) {
       e.preventDefault();
       const nombre  = document.getElementById('rNombre').value.trim();
       const celular = document.getElementById('rCelular').value.trim();
-      const msg     = document.getElementById('formMsg');
       const btn     = document.getElementById('submitBtn');
 
       if (!nombre || !celular) {
@@ -614,17 +1089,14 @@
 
       const registros = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 
-      // Duplicado
       if (registros.find(r => r.celular === celular)) {
-        mostrarMsg('Este número de celular ya está registrado.', 'dup');
+        mostrarMsg('Este número de celular ya está registrado. ¡Gracias!', 'dup');
         return;
       }
 
-      // Loading
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registrando…';
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp;Registrando…';
 
-      // Simular pequeño delay para mejor UX
       setTimeout(() => {
         const ahora = new Date();
         registros.push({
@@ -635,37 +1107,46 @@
         });
         localStorage.setItem(STORAGE_KEY, JSON.stringify(registros));
 
-        // Mostrar pantalla de éxito
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Registrarme!';
         document.getElementById('rNombre').value  = '';
         document.getElementById('rCelular').value = '';
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Registrarme';
 
-        document.getElementById('successName').textContent =
-          `¡Bienvenido/a, ${nombre}!`;
-        document.getElementById('formWrap').style.display  = 'none';
+        document.getElementById('successName').textContent = `¡Bienvenido/a, ${nombre}!`;
+        document.getElementById('formWrap').style.display    = 'none';
         document.getElementById('successScreen').style.display = 'flex';
         actualizarContador();
-      }, 600);
+      }, 700);
     }
 
-    /* ── Mensaje inline ─────────────────────── */
     function mostrarMsg(texto, tipo) {
       const el = document.getElementById('formMsg');
       el.textContent  = texto;
       el.className    = `form-msg form-msg--${tipo}`;
       el.style.display = 'block';
-      setTimeout(() => { el.style.display = 'none'; }, 4000);
+      setTimeout(() => { el.style.display = 'none'; }, 4500);
     }
 
-    /* ── Nuevo registro ─────────────────────── */
     function nuevoRegistro() {
       document.getElementById('successScreen').style.display = 'none';
       document.getElementById('formWrap').style.display      = 'block';
     }
 
-    // Init
     actualizarContador();
+
+    /* ─────────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────────── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('visible');
+          observer.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
